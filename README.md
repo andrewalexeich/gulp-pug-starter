@@ -1,5 +1,5 @@
 # Gulppack
-Gulppack - сборка для автоматизации задач в повседневной front-end разработке. Компилируйте SCSS, сжимайте файлы, оптимизируйте картинки, пишите на ES6. При  каждом сохранении файла в редакторе кода браузер автоматически перезагружает страницу. Не волнуйтесь о том, что вам придётся выполнять рутинную работу.
+Gulppack - сборка для автоматизации задач в повседневной front-end разработке. Компилируйте SCSS и Pug, сжимайте файлы, оптимизируйте картинки, пишите на ES6. При  каждом сохранении файла в редакторе кода браузер автоматически перезагружает страницу. Не волнуйтесь о том, что вам придётся выполнять рутинную работу.
 
 ## Что включает в себя сборка?
 * [browser-sync](https://browsersync.io/docs/gulp) - живая перезагрузка веб-страницы при внесении изменений в файлы вашего проекта. Одна из опций — tunnel, которая выдаёт вам ссылку, чтобы любой желающий смог посмотреть вашу работу (в обход хостинга);
@@ -56,7 +56,7 @@ Gulppack - сборка для автоматизации задач в повс
 
 # Gulppack
 
-Gulppack is a very useful gulp build for your front-end projects. Compile SASS, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
+Gulppack is a very useful gulp build for your front-end projects. Compile SASS and Pug, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
 
 ## What includes:
 * [browser-sync](https://browsersync.io/docs/gulp) - live reloading your web page. Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices;
