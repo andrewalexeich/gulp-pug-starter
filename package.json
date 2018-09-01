@@ -24,6 +24,7 @@
         "gulp-load-plugins": "^1.5.0",
         "gulp-newer": "^1.4.0",
         "gulp-plumber": "^1.2.0",
+        "gulp-pug": "^4.0.1",
         "gulp-rename": "^1.2.2",
         "gulp-replace": "^0.6.1",
         "gulp-sass": "^3.1.0",

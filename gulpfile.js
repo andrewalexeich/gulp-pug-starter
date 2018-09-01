@@ -5,6 +5,7 @@ global.$ = {
     autoprefixer: require("gulp-autoprefixer"),
     babel: require("gulp-babel"),
     uglify: require("gulp-uglify"),
+    pug: require("gulp-pug"),
     sass: require("gulp-sass"),
     cleanCSS: require("gulp-clean-css"),
     rename: require("gulp-rename"),
@@ -19,7 +20,7 @@ global.$ = {
     plumber: require("gulp-plumber"),
     debug: require("gulp-debug"),
     watch: require("gulp-watch"),
-    
+
     path: {
         tasks: require("./gulp/config.js")
     }

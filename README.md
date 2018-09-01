@@ -5,7 +5,8 @@ Gulppack - сборка для автоматизации задач в повс
 * [browser-sync](https://browsersync.io/docs/gulp) - живая перезагрузка веб-страницы при внесении изменений в файлы вашего проекта. Одна из опций — tunnel, которая выдаёт вам ссылку, чтобы любой желающий смог посмотреть вашу работу (в обход хостинга);
 * [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) — автоматически расставляет вендорные префиксы в CSS в соответствии с сервисом [Can I Use](https://caniuse.com/);
 * [gulp-babel](https://www.npmjs.com/package/gulp-babel) - использование ES6 с [Babel](https://babeljs.io/);
-* [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — минификация js-файлов;
+* [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — минификация JS-файлов;
+* [gulp-pug](https://www.npmjs.com/package/gulp-pug) — компиляция Pug в HTML;
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) — компиляция SCSS в CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — минификация CSS-файлов;
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename) — переименование файлов, добавление суффиксов и префиксов (например, добавление суффикса .min к минифицированным файлам);
@@ -15,7 +16,7 @@ Gulppack - сборка для автоматизации задач в повс
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) — генератор фавиконок для вашего проекта;
 * [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite) - создание SVG-спрайтов;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - замена строк;
-* [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio) - плагин для манипуляций с HTML- и XML-файлами; 
+* [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio) - плагин для манипуляций с HTML- и XML-файлами;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) — дополнительный плагин к ```gulp-imagemin```, позволяет сжимать только новые изображения;
 * [gulp-plumber](https://www.npmjs.com/package/gulp-plumber) — оповещения в командной строке (например, ошибки в Sass/SCSS);
 * [gulp-debug](https://www.npmjs.com/package/gulp-debug) — отладка в терминале;
@@ -29,8 +30,8 @@ Gulppack - сборка для автоматизации задач в повс
 
 > Yarn - это современная альтернатива npm. Yarn работает с тем же файлом ```package.json``` и так же скачивает необходимые модули в папку ```node_modules```, но делает это намного быстрее.
 
-Далее, используя ```cmd``` в Windows или Терминал Linux/macOS, проделайте 
-следующие шаги: 
+Далее, используя ```cmd``` в Windows или Терминал Linux/macOS, проделайте
+следующие шаги:
 
 * установите ```gulp``` глобально: ```npm i --global gulp-cli``` (если вы работаете с ```npm```) или ```yarn global add gulp-cli``` (если вы работаете с ```yarn```);
 * перейдите в скачанную папку со сборкой: ```cd gulppack```;
@@ -62,6 +63,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SASS, 
 * [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - parsing CSS and add vendor prefixes to rules by [Can I Use](https://caniuse.com/);
 * [gulp-babel](https://www.npmjs.com/package/gulp-babel) - use next generation JavaScript with [Babel](https://babeljs.io/);
 * [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) - minifing JS files;
+* [gulp-pug](https://www.npmjs.com/package/gulp-pug) — compiling Pug to HTML;
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) - compiling SCSS to CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) - minifing CSS files;
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename) - renaming files, adding prefix, suffix;
@@ -71,7 +73,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SASS, 
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) - favicons generator for your projects;
 * [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite) - create SVG sprites;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - a string replace plugin for gulp;
-* [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio) - a plugin for gulp which allows you to manipulate HTML and XML files; 
+* [gulp-cheerio](https://www.npmjs.com/package/gulp-cheerio) - a plugin for gulp which allows you to manipulate HTML and XML files;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) - piping the source files to newer before imagemin ensures that only those images that have changed are minified;
 * [gulp-plumber](https://www.npmjs.com/package/gulp-plumber) - notifications in your terminal (SCSS/Sass errors for example);
 * [gulp-debug](https://www.npmjs.com/package/gulp-debug) - debug Vinyl file streams to see what files are run through your Gulp pipeline;
@@ -84,7 +86,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SASS, 
 
 > Yarn is a modern alternative to npm. Yarn works with the same ```package file.json``` and just downloads the required modules into the folder ```node_modules```, but does it much faster.
 
-Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the following: 
+Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the following:
 
 * install ```gulp``` globally: ```npm install --global gulp-cli``` (if you are working with ```npm```) or ```yarn global add gulp-cli``` (if you are working with ```yarn```);
 * go to the folder: ```cd gulppack```;
