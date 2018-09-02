@@ -37,10 +37,11 @@ Gulppack - сборка для автоматизации задач в повс
 * перейдите в скачанную папку со сборкой: ```cd gulppack```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```npm install --save-dev --save-exact``` (если вы работаете с ```npm```) либо введите команду ```yarn``` (если вы работаете с ```yarn```);
 * создайте фавиконки: ```gulp favicons```;
+* создайте спрайты: ```gulp svg```;
 * введите последнюю команду: ```gulp```.
 ![](https://i.imgur.com/iOYGCoG.png)
 
-Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером и работающим browser-sync. Теперь если вы внесёте изменения в файлы ```.html```, ```.sass```, ```.js```, браузер сам перезагрузит веб-страницу, а Gulp заново соберёт ваш проект в папке ```dest```.
+Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером и работающим browser-sync. Теперь если вы внесёте изменения в файлы ```.pug```, ```.scss```, ```.js```, браузер сам перезагрузит веб-страницу, а Gulp заново соберёт ваш проект в папке ```dest```.
 
 ## Если в Windows возникает ошибка с тем, что команда gulp не найдена
 Модули ```npm```, такие как ```gulp```, не установлены в путях. Таким образом они не обнаруживаются при их запуске в командной строке.
@@ -92,12 +93,13 @@ Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the follow
 * go to the folder: ```cd gulppack```;
 * enter the command that downloads the required components: ```npm i --save-dev --save-exact``` (if you are working with ```npm```) or enter ```yarn``` (if you are working with ```yarn```);
 * create favicons: ```gulp favicons```;
+* create sprites: ```gulp svg```;
 * run Gulp: ```gulp```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
 
 Your web browser will open with local server and running browser-sync. Now if you make changes to the
-files ```.html```, ```.css``` or ```.js```, your web browser will reload the web page itself, and Gulp
+files ```.pug```, ```.scss``` or ```.js```, your web browser will reload the web page itself, and Gulp
 will re-build your project in the ```dest``` folder.
 
 ## Error when running gulp command in Windows
