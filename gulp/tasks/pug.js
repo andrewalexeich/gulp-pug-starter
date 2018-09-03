@@ -1,6 +1,6 @@
 module.exports = function() {
-    $.gulp.task("html", function() {
-        return $.gulp.src("./src/views/**/*.pug")
+    $.gulp.task("pug", function() {
+        return $.gulp.src(["./src/views/**/*.pug", "!./src/views/blocks/*.pug"])
             .pipe($.gp.pug({pretty: true}))
             .pipe($.gp.replace("../dest/", "../"))
             .pipe($.gulp.dest("./dest/"))

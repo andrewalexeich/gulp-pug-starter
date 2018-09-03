@@ -19,10 +19,14 @@ html(lang="ru")
 		link(rel="stylesheet" href="../dest/styles/main.min.css")
 		link(rel="stylesheet" href="../dest/img/sprites/sprite.css")
 	body
-        .svg-arrow.svg-arrow-dims
-        .svg-basket.svg-basket-dims
-        .svg-battery.svg-battery-dims
-        .svg-chart.svg-chart-dims
-        .svg-login.svg-login-dims
-    	img(src="../dest/img/sprites/sprite.svg" alt="")
+		include blocks/header.pug
+		hr
+		.svg-arrow.svg-arrow-dims
+		.svg-basket.svg-basket-dims
+		.svg-battery.svg-battery-dims
+		.svg-chart.svg-chart-dims
+		.svg-login.svg-login-dims
+		img(src="../dest/img/sprites/sprite.svg" alt="")
+		hr
+		include blocks/footer.pug
 		script(src="../dest/js/main.min.js")
