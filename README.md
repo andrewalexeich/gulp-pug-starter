@@ -1,4 +1,4 @@
-# Gulppack
+# Gulppack. Версия с Pug + SCSS
 Gulppack - сборка для автоматизации задач в повседневной front-end разработке. Компилируйте SCSS и Pug, сжимайте файлы, оптимизируйте картинки, пишите на ES6. При  каждом сохранении файла в редакторе кода браузер автоматически перезагружает страницу. Не волнуйтесь о том, что вам придётся выполнять рутинную работу.
 
 ## Что включает в себя сборка?
@@ -53,7 +53,7 @@ Gulppack - сборка для автоматизации задач в повс
 
 ***
 
-# Gulppack
+# Gulppack. Pug + SCSS version
 
 Gulppack is a very useful gulp build for your front-end projects. Compile SASS and Pug, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
 
