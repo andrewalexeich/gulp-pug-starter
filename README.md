@@ -33,7 +33,7 @@ Gulppack - сборка для автоматизации задач в повс
 следующие шаги:
 
 * установите ```gulp``` глобально: ```npm i --global gulp-cli``` (если вы работаете с ```npm```) или ```yarn global add gulp-cli``` (если вы работаете с ```yarn```);
-* перейдите в скачанную папку со сборкой: ```cd gulppack```;
+* перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```npm install --save-dev --save-exact``` (если вы работаете с ```npm```) либо введите команду ```yarn``` (если вы работаете с ```yarn```);
 * создайте фавиконки: ```gulp favicons```;
 * введите последнюю команду: ```gulp```.
@@ -87,7 +87,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SASS a
 Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the following:
 
 * install ```gulp``` globally: ```npm install --global gulp-cli``` (if you are working with ```npm```) or ```yarn global add gulp-cli``` (if you are working with ```yarn```);
-* go to the folder: ```cd gulppack```;
+* go to the folder: ```cd gulppack-pug```;
 * enter the command that downloads the required components: ```npm i --save-dev --save-exact``` (if you are working with ```npm```) or enter ```yarn``` (if you are working with ```yarn```);
 * create favicons: ```gulp favicons```;
 * run Gulp: ```gulp```.
