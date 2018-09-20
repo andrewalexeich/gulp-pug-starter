@@ -9,6 +9,7 @@ Gulppack - сборка для автоматизации задач в повс
 * [gulp-pug](https://www.npmjs.com/package/gulp-pug) — компиляция Pug в HTML;
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) — компиляция SCSS в CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — минификация CSS-файлов;
+* [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps) - карта стилей;
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename) — переименование файлов, добавление суффиксов и префиксов (например, добавление суффикса .min к минифицированным файлам);
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) — сжатие изображений PNG, JPG, GIF и SVG;
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) — дополнение к gulp-imagemin для работы с PNG-изображениями;
@@ -35,8 +36,7 @@ Gulppack - сборка для автоматизации задач в повс
 * скачайте сборку: ```git clone https://github.com/andreyalexeich/gulppack-pug.git```;
 * установите ```gulp``` глобально: ```npm i --global gulp-cli``` (если вы работаете с ```npm```) или ```yarn global add gulp-cli``` (если вы работаете с ```yarn```);
 * перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
-* введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```npm install --save-dev --save-exact``` (если вы работаете с ```npm```) либо введите команду ```yarn``` (если вы работаете с ```yarn```);
-* создайте фавиконки: ```gulp favicons```;
+* введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```npm i``` (если вы работаете с ```npm```) либо введите команду ```yarn``` (если вы работаете с ```yarn```);
 * введите последнюю команду: ```gulp```.
 ![](https://i.imgur.com/iOYGCoG.png)
 
@@ -56,7 +56,7 @@ Gulppack - сборка для автоматизации задач в повс
 
 # Gulppack. Pug + SCSS version
 
-Gulppack is a very useful gulp build for your front-end projects. Compile SASS and Pug, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
+Gulppack is a very useful gulp build for your front-end projects. Compile SCSS and Pug, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
 
 ## What includes:
 * [browser-sync](https://browsersync.io/docs/gulp) - live reloading your web page. Browsersync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices;
@@ -66,6 +66,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SASS a
 * [gulp-pug](https://www.npmjs.com/package/gulp-pug) — compiling Pug to HTML;
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) - compiling SCSS to CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) - minifing CSS files;
+* [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps) - generating the sourcemaps;
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename) - renaming files, adding prefix, suffix;
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) - minify PNG, JPEG, GIF and SVG images;
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) - pngquant imagemin plugin;
@@ -90,8 +91,7 @@ Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the follow
 * download Gulppack: ```git clone https://github.com/andreyalexeich/gulppack-pug.git```;
 * install ```gulp``` globally: ```npm install --global gulp-cli``` (if you are working with ```npm```) or ```yarn global add gulp-cli``` (if you are working with ```yarn```);
 * go to the folder: ```cd gulppack-pug```;
-* enter the command that downloads the required components: ```npm i --save-dev --save-exact``` (if you are working with ```npm```) or enter ```yarn``` (if you are working with ```yarn```);
-* create favicons: ```gulp favicons```;
+* enter the command that downloads the required components: ```npm i``` (if you are working with ```npm```) or enter ```yarn``` (if you are working with ```yarn```);
 * run Gulp: ```gulp```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
