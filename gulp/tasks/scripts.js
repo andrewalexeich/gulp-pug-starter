@@ -5,7 +5,7 @@ module.exports = function() {
             .pipe($.gp.babel({ presets: ["@babel/preset-env"]}))
             .pipe($.gp.uglify())
             .pipe($.gp.rename({suffix: ".min"}))
-            .pipe($.gp.sourcemaps.write("./maps"))
+            .pipe($.gp.sourcemaps.write("./maps/"))
             .pipe($.gulp.dest("./dest/js/"))
             .pipe($.debug({"title": "scripts"}))
             .on("end", $.bs.reload);
