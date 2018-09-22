@@ -17,16 +17,12 @@ html(lang="ru")
 		link(rel="apple-touch-icon" sizes="152x152" href="../dest/img/favicons/apple-touch-icon-152x152.png")
 		link(rel="apple-touch-icon" sizes="180x180" href="../dest/img/favicons/apple-touch-icon-180x180.png")
 		link(rel="stylesheet" href="../dest/styles/main.min.css")
-		link(rel="stylesheet" href="../dest/img/sprites/sprite.css")
 	body
-		include blocks/header.pug
-		hr
-		.svg-arrow.svg-arrow-dims
-		.svg-basket.svg-basket-dims
-		.svg-battery.svg-battery-dims
-		.svg-chart.svg-chart-dims
-		.svg-login.svg-login-dims
-		img(src="../dest/img/sprites/sprite.svg" alt="")
-		hr
-		include blocks/footer.pug
+		.wrapper
+			.wrapper__title
+				h1 Gulppack <br/> Frontend development with pleasure
+			.wrapper__subtitle
+				p Gulppack is a very useful gulp build for your front-end projects. Compile <a href="https://sass-lang.com">SCSS</a> and
+				<a href="https://pugjs.org">Pug</a>, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
+			include blocks/icons.pug
 		script(src="../dest/js/main.min.js")

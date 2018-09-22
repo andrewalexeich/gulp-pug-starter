@@ -14,7 +14,8 @@ global.$ = {
     pngquant: require("imagemin-pngquant"),
     imageminJpegRecompress: require("imagemin-jpeg-recompress"),
     favicons: require("gulp-favicons"),
-    svgSprite: require("gulp-svg-sprite"),
+    iconfont: require("gulp-iconfont"),
+    iconfontcss: require("gulp-iconfont-css"),
     replace: require("gulp-replace"),
     newer: require("gulp-newer"),
     plumber: require("gulp-plumber"),
@@ -31,7 +32,7 @@ $.path.tasks.forEach(function(taskPath) {
 });
 
 // BUILD
-$.gulp.task("default", $.gulp.series(
-    $.gulp.parallel("pug", "styles", "favicons", "images", "svg", "scripts"),
+$.gulp.task("default", $.gulp.series("iconfont",
+    $.gulp.parallel("pug", "styles", "favicons", "images", "scripts"),
     $.gulp.parallel("watch", "serve")
 ));
