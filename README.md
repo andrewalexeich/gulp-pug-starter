@@ -15,6 +15,8 @@ Gulppack - сборка для автоматизации задач в повс
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) — дополнение к gulp-imagemin для работы с PNG-изображениями;
 * [imagemin-jpeg-recompress](https://www.npmjs.com/package/imagemin-jpeg-recompress) — дополнение к gulp-imagemin для работы с JPG-изображениями;
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) — генератор фавиконок для вашего проекта;
+* [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) — генератор иконочного шрифта из SVG-изображений;
+* [gulp-iconfont-css](https://www.npmjs.com/package/gulp-iconfont-css) — генератор стилей для иконочного шрифта;
 * [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite) - создание SVG-спрайтов;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - замена строк;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) — дополнительный плагин к ```gulp-imagemin```, позволяет сжимать только новые изображения;
@@ -37,6 +39,7 @@ Gulppack - сборка для автоматизации задач в повс
 * установите ```gulp``` глобально: ```npm i --global gulp-cli``` (если вы работаете с ```npm```) или ```yarn global add gulp-cli``` (если вы работаете с ```yarn```);
 * перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```npm i``` (если вы работаете с ```npm```) либо введите команду ```yarn``` (если вы работаете с ```yarn```);
+* создайте иконочный шрифт: ```gulp iconfont```;
 * введите последнюю команду: ```gulp```.
 ![](https://i.imgur.com/iOYGCoG.png)
 
@@ -72,6 +75,8 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SCSS a
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) - pngquant imagemin plugin;
 * [imagemin-jpeg-recompress](https://www.npmjs.com/package/imagemin-jpeg-recompress) - jpeg-recompress imagemin plugin;
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) - favicons generator for your projects;
+* [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) — generate iconic fonts from your SVG;
+* [gulp-iconfont-css](https://www.npmjs.com/package/gulp-iconfont-css) — generate styles for your iconic fonts;
 * [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite) - create SVG sprites;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - a string replace plugin for gulp;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) - piping the source files to newer before imagemin ensures that only those images that have changed are minified;
@@ -92,6 +97,7 @@ Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the follow
 * install ```gulp``` globally: ```npm install --global gulp-cli``` (if you are working with ```npm```) or ```yarn global add gulp-cli``` (if you are working with ```yarn```);
 * go to the folder: ```cd gulppack-pug```;
 * enter the command that downloads the required components: ```npm i``` (if you are working with ```npm```) or enter ```yarn``` (if you are working with ```yarn```);
+* create iconic fonts: ```gulp iconfont```;
 * run Gulp: ```gulp```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
