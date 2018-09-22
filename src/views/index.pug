@@ -24,10 +24,5 @@ html(lang="ru")
 			.wrapper__subtitle
 				p Gulppack is a very useful gulp build for your front-end projects. Compile <a href="https://sass-lang.com">SCSS</a> and
 				<a href="https://pugjs.org">Pug</a>, compress the files, optimize the pictures, write ES6. It reloads your browser automatically every time you save a file in a code editor. Don't care about tedious things, leave it to us!
-			.wrapper__icons
-				.icon-arrow
-				.icon-basket
-				.icon-battery
-				.icon-chart
-				.icon-login
+			include blocks/icons.pug
 		script(src="../dest/js/main.min.js")

@@ -32,7 +32,7 @@ $.path.tasks.forEach(function(taskPath) {
 });
 
 // BUILD
-$.gulp.task("default", $.gulp.series(
+$.gulp.task("default", $.gulp.series("iconfont",
     $.gulp.parallel("pug", "styles", "favicons", "images", "scripts"),
     $.gulp.parallel("watch", "serve")
 ));
