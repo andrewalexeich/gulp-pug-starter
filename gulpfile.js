@@ -1,10 +1,10 @@
 global.$ = {
     gulp: require("gulp"),
-    gp: require("gulp-load-plugins")(),
-    bs: require("browser-sync").create(),
+    browsersync: require("browser-sync").create(),
     autoprefixer: require("gulp-autoprefixer"),
     babel: require("gulp-babel"),
     uglify: require("gulp-uglify"),
+    concat: require("gulp-concat"),
     pug: require("gulp-pug"),
     sass: require("gulp-sass"),
     mincss: require("gulp-clean-css"),
@@ -21,6 +21,7 @@ global.$ = {
     plumber: require("gulp-plumber"),
     debug: require("gulp-debug"),
     watch: require("gulp-watch"),
+    clean: require("gulp-clean"),
 
     path: {
         tasks: require("./gulp/config.js")
@@ -32,7 +33,7 @@ $.path.tasks.forEach(function(taskPath) {
 });
 
 // BUILD
-$.gulp.task("default", $.gulp.series("iconfont",
+$.gulp.task("default", $.gulp.series("clean", "iconfont",
     $.gulp.parallel("pug", "styles", "favicons", "images", "scripts"),
     $.gulp.parallel("watch", "serve")
 ));
