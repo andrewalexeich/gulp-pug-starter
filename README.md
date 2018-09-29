@@ -44,7 +44,7 @@ Gulppack - сборка для автоматизации задач в повс
 Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером и работающим browser-sync. Теперь если вы внесёте изменения в файлы ```.pug```, ```.scss```, ```.js```, браузер сам перезагрузит веб-страницу, а Gulp заново соберёт ваш проект в папке ```dest```.
 
 ## Bower?
-Вместо [Bower](https://bower.io/) используйте yarn. Например, вам нужен [jQuery](https://jquery.com/) (уже используется в сборке в качестве примера), введите команду: ```yarn add jquery```, затем соберите: ```gulp vendor``` и запустите: ```gulp```. Вам остаётся подключить данную библиотеку в ваш ```.html```.
+Вместо [Bower](https://bower.io/) используйте yarn. Например, вам нужен [jQuery](https://jquery.com/) (уже используется в сборке в качестве примера), введите команду: ```yarn add jquery```, затем соберите: ```gulp vendor``` и запустите: ```gulp```. Вам остаётся подключить данную библиотеку в ваш ```.pug```.
 
 ***
 
@@ -96,4 +96,4 @@ files ```.pug```, ```.scss``` or ```.js```, your web browser will reload the web
 will re-build your project in the ```dest``` folder.
 
 ## Bower?
-Use yarn instead of [Bower](https://bower.io/). For example, you are need in [jQuery](https://jquery.com/) (already used in this project as an example), then using ```cmd``` in Windows or Terminal in Linux/macOS install it: ```yarn add jquery```, build it: ```gulp vendor``` and run: ```gulp```. All you have to do is connect this library to your ```.html```.
+Use yarn instead of [Bower](https://bower.io/). For example, you are need in [jQuery](https://jquery.com/) (already used in this project as an example), then using ```cmd``` in Windows or Terminal in Linux/macOS install it: ```yarn add jquery```, build it: ```gulp vendor``` and run: ```gulp```. All you have to do is connect this library to your ```.pug```.
