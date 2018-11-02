@@ -5,8 +5,12 @@ module.exports = function() {
             .pipe($.imagemin([
                 $.imagemin.gifsicle({interlaced: true}),
                 $.imagemin.jpegtran({progressive: true}),
-                $.imageminJpegRecompress({loops: 1, quality: "low"}),
-                $.imagemin.svgo(),
+                $.imageminJpegRecompress({
+					progressive: true,
+					max: 80,
+					min: 70
+				}),
+                $.imagemin.svgo({plugins: [{removeViewBox: true}]}),
                 $.imagemin.optipng({optimizationLevel: 5}),
                 $.pngquant({quality: "65-70", speed: 5})
             ]))
