@@ -4,12 +4,12 @@ module.exports = function() {
             //.pipe($.replace("&gt;", ">"))
             .pipe($.svgSprite({
 				preview: false,
-                cssFile: "../../../src/styles/partials/_sprite.scss",
+                cssFile: "./src/styles/partials/_sprite.scss",
 				svg: {
-					sprite: "../../../dest/img/sprites/sprite.svg"
+					sprite: "./dest/img/sprites/sprite.svg"
 				}
             }))
-            .pipe($.gulp.dest("./dest/img/sprites/"))
+            .pipe($.gulp.dest("./"))
             .pipe($.debug({"title": "sprite"}));
     });
 };
