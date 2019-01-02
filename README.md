@@ -16,8 +16,6 @@ Gulppack - сборка для автоматизации задач в повс
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) — дополнение к gulp-imagemin для работы с PNG-изображениями;
 * [imagemin-jpeg-recompress](https://www.npmjs.com/package/imagemin-jpeg-recompress) — дополнение к gulp-imagemin для работы с JPG-изображениями;
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) — генератор фавиконок для вашего проекта;
-* [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) — генератор иконочного шрифта из SVG-изображений;
-* [gulp-iconfont-css](https://www.npmjs.com/package/gulp-iconfont-css) — генератор стилей для иконочного шрифта;
 * [gulp-svg-sprites](https://www.npmjs.com/package/gulp-svg-sprites) — создание SVG-спрайтов;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - замена строк;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) — дополнительный плагин к ```gulp-imagemin```, позволяет сжимать только новые изображения;
@@ -45,7 +43,7 @@ Gulppack - сборка для автоматизации задач в повс
 Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером и работающим browser-sync. Теперь если вы внесёте изменения в файлы ```.pug```, ```.scss```, ```.js```, браузер сам перезагрузит веб-страницу, а Gulp заново соберёт ваш проект в папке ```dest```.
 
 ## Bower?
-Вместо [Bower](https://bower.io/) используйте yarn. Например, вам нужен [jQuery](https://jquery.com/) (уже используется в сборке в качестве примера), введите команду: ```yarn add jquery```, затем соберите: ```gulp vendor``` и запустите: ```gulp```. Вам остаётся подключить данную библиотеку в ваш ```.pug```.
+Вместо [Bower](https://bower.io/) используйте yarn или npm. Подробнее [тут](https://medium.com/netscape/bye-bye-bower-or-how-to-migrate-from-bower-to-npm-and-webpack-4eb2e1121a50).
 
 ***
 
@@ -68,8 +66,6 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SCSS a
 * [imagemin-pngquant](https://www.npmjs.com/package/imagemin-pngquant) - pngquant imagemin plugin;
 * [imagemin-jpeg-recompress](https://www.npmjs.com/package/imagemin-jpeg-recompress) - jpeg-recompress imagemin plugin;
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) - favicons generator for your projects;
-* [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) — generate iconic fonts from your SVG;
-* [gulp-iconfont-css](https://www.npmjs.com/package/gulp-iconfont-css) — generate styles for your iconic fonts;
 * [gulp-svg-sprites](https://www.npmjs.com/package/gulp-svg-sprites) — create SVG sprites;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - a string replace plugin for gulp;
 * [gulp-newer](https://www.npmjs.com/package/gulp-newer) - piping the source files to newer before imagemin ensures that only those images that have changed are minified;
@@ -98,4 +94,4 @@ files ```.pug```, ```.scss``` or ```.js```, your web browser will reload the web
 will re-build your project in the ```dest``` folder.
 
 ## Bower?
-Use yarn instead of [Bower](https://bower.io/). For example, you are need in [jQuery](https://jquery.com/) (already used in this project as an example), then using ```cmd``` in Windows or Terminal in Linux/macOS install it: ```yarn add jquery```, build it: ```gulp vendor``` and run: ```gulp```. All you have to do is connect this library to your ```.pug```.
+Use yarn or npm instead of [Bower](https://bower.io/). See more [there](https://medium.com/netscape/bye-bye-bower-or-how-to-migrate-from-bower-to-npm-and-webpack-4eb2e1121a50).

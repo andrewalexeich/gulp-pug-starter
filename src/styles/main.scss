@@ -1,6 +1,5 @@
 @import "./partials/normalize";
 @import "./partials/variables";
-@import "./partials/iconfont";
 @import "./partials/sprite";
 
 h1, h2, h3, h4, p {
@@ -8,8 +7,14 @@ h1, h2, h3, h4, p {
     margin: 0;
 }
 
+code {
+	background: #d3dddd;
+	padding: 5px;
+	margin-right: 5px;
+}
+
 body {
-    background: #b4c6c64d;
+    background: #c9e0e04d;
     font-family: "Helvetica", Arial, sans-serif;
     width: 100%;
     height: 100%;
@@ -18,12 +23,11 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+	line-height: 34px;
 }
 
 .wrapper {
-    width: 100%;
-    max-width: 850px;
-    min-width: 320px;
+    width: 850px;
     margin: 0 auto;
     padding: 0 40px;
     &__title {
@@ -43,22 +47,6 @@ body {
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        font-family: "icons";
         font-size: 35px;
-        .icon-arrow {
-            color: tomato;
-        }
-        .icon-basket {
-            color: darkmagenta;
-        }
-        .icon-battery {
-            color: green;
-        }
-        .icon-chart {
-            color: orange;
-        }
-        .icon-login {
-            color: cadetblue;
-        }
     }
 }

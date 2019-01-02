@@ -6,8 +6,6 @@ module.exports = [
     "./gulp/tasks/favicons",
     "./gulp/tasks/images",
     "./gulp/tasks/sprite",
-    "./gulp/tasks/iconfont",
-    "./gulp/tasks/libs",
     "./gulp/tasks/watch",
     "./gulp/tasks/clean",
     "./gulp/tasks/serve"
