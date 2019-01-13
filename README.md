@@ -45,6 +45,9 @@ Gulppack - сборка для автоматизации задач в повс
 ## Bower?
 Вместо [Bower](https://bower.io/) используйте yarn или npm. Подробнее [тут](https://medium.com/netscape/bye-bye-bower-or-how-to-migrate-from-bower-to-npm-and-webpack-4eb2e1121a50).
 
+## Нужен SCSS без Pug?
+Используйте [эту](https://github.com/andreyalexeich/gulppack-scss/) сборку.
+
 ***
 
 # Gulppack. Pug + SCSS version
@@ -95,3 +98,6 @@ will re-build your project in the ```dest``` folder.
 
 ## Bower?
 Use yarn or npm instead of [Bower](https://bower.io/). See more [there](https://medium.com/netscape/bye-bye-bower-or-how-to-migrate-from-bower-to-npm-and-webpack-4eb2e1121a50).
+
+## Are you need in SCSS without Pug?
+Please use [this](https://github.com/andreyalexeich/gulppack-scss/) version.
