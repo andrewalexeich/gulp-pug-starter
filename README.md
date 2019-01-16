@@ -18,7 +18,6 @@ Gulppack - сборка для автоматизации задач в повс
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) — генератор фавиконок для вашего проекта;
 * [gulp-svg-sprites](https://www.npmjs.com/package/gulp-svg-sprites) — создание SVG-спрайтов;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - замена строк;
-* [gulp-newer](https://www.npmjs.com/package/gulp-newer) — дополнительный плагин к ```gulp-imagemin```, позволяет сжимать только новые изображения;
 * [gulp-plumber](https://www.npmjs.com/package/gulp-plumber) — оповещения в командной строке (например, ошибки в Sass/SCSS);
 * [gulp-debug](https://www.npmjs.com/package/gulp-debug) — отладка в терминале;
 * [gulp-watch](https://www.npmjs.com/package/gulp-watch) — отслеживание изменений в ваших файлах проекта;
@@ -36,7 +35,8 @@ Gulppack - сборка для автоматизации задач в повс
 * установите ```gulp``` глобально: ```yarn global add gulp-cli```;
 * перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```yarn```;
-* введите последнюю команду: ```gulp```.
+* введите команду: ```yarn run dev``` (режим разработки);
+* чтобы окончательно завершить проект, введите команду ```yarn run build```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
 
@@ -71,7 +71,6 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SCSS a
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) - favicons generator for your projects;
 * [gulp-svg-sprites](https://www.npmjs.com/package/gulp-svg-sprites) — create SVG sprites;
 * [gulp-replace](https://www.npmjs.com/package/gulp-replace) - a string replace plugin for gulp;
-* [gulp-newer](https://www.npmjs.com/package/gulp-newer) - piping the source files to newer before imagemin ensures that only those images that have changed are minified;
 * [gulp-plumber](https://www.npmjs.com/package/gulp-plumber) - notifications in your terminal (SCSS/Sass errors for example);
 * [gulp-debug](https://www.npmjs.com/package/gulp-debug) - debug Vinyl file streams to see what files are run through your Gulp pipeline;
 * [gulp-watch](https://www.npmjs.com/package/gulp-watch) - file watcher;
@@ -88,7 +87,8 @@ Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the follow
 * install ```gulp``` globally: ```yarn global add gulp-cli```;
 * go to the folder: ```cd gulppack-pug```;
 * enter the command that downloads the required components: ```yarn```;
-* run Gulp: ```gulp```.
+* run Gulp: ```yarn run dev``` (dev mode);
+* build your project: ```yarn run build```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
 
