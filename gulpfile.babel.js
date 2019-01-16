@@ -46,19 +46,14 @@ const paths = {
 		favicons: "./dest/img/favicons/",
 		images: "./dest/img/",
 		sprites: "./dest/img/sprites/",
-	},
-	//tasks: require("./gulp/config.js")
+	}
 };
-
-// paths.tasks.forEach(function(taskPath) {
-//     require(taskPath)();
-// });
 
 
 // GENERAL
 export const cleanFiles = () => src(paths.build.clean, {read: false})
 	.pipe(clean())
-	.pipe(debug({"title": "clean"}));
+	.pipe(debug({"title": "Cleaning..."}));
 
 export const server = () => {
 	browsersync.init({
@@ -186,13 +181,15 @@ export const dev = series(cleanFiles, sprites, parallel(
 	favs
 ), parallel(watchDev, server));
 
-export const prod = series(cleanFiles, sprites, parallel(
+export const prod = series(
+	cleanFiles,
+	sprites,
 	serverConfig,
 	pugProd,
 	stylesProd,
 	scriptsProd,
 	imagesProd,
 	favs
-));
+);
 
 export default dev;
