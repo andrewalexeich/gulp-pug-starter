@@ -36,7 +36,8 @@ Gulppack - сборка для автоматизации задач в повс
 * установите ```gulp``` глобально: ```yarn global add gulp-cli```;
 * перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```yarn```;
-* введите последнюю команду: ```gulp```.
+* введите команду: ```yarn run dev``` (режим разработки);
+* чтобы окончательно завершить проект, введите команду ```yarn run build```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
 
@@ -88,7 +89,8 @@ Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the follow
 * install ```gulp``` globally: ```yarn global add gulp-cli```;
 * go to the folder: ```cd gulppack-pug```;
 * enter the command that downloads the required components: ```yarn```;
-* run Gulp: ```gulp```.
+* run Gulp: ```yarn run dev``` (dev mode);
+* build your project: ```yarn run build```.
 
 ![](https://i.imgur.com/iOYGCoG.png)
 
