@@ -12,7 +12,7 @@ Gulppack - сборка для автоматизации задач в повс
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) — компиляция SCSS в CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — минификация CSS-файлов;
 * [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps) - карта стилей;
-* [gulp-rename](https://www.npmjs.com/package/gulp-rename) — переименование файлов, добавление суффиксов и префиксов (например, добавление суффикса .min к минифицированным файлам);
+* [gulp-rename](https://www.npmjs.com/package/gulp-rename) — переименование файлов, добавление суффиксов и префиксов (например, добавление суффикса ```.min``` к минифицированным файлам);
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) — сжатие изображений PNG, JPG, GIF и SVG (включая дополнительные плагины для оптимизации);
 * [gulp-favicons](https://github.com/evilebottnawi/favicons) — генератор фавиконок для вашего проекта;
 * [gulp-svg-sprites](https://www.npmjs.com/package/gulp-svg-sprites) — создание SVG-спрайтов;
@@ -81,7 +81,7 @@ Gulppack is a very useful gulp build for your front-end projects. Compile SCSS a
 
 > Yarn is a modern alternative to npm. Yarn works with the same ```package file.json``` and just downloads the required modules into the folder ```node_modules```, but does it much faster.
 
-Then using ```cmd``` in Windows or Terminal in Linux/macOS, please do the following:
+Then using cmd in Windows or Terminal in Linux/macOS, please do the following:
 
 * clone the repository: ```git clone https://github.com/andreyalexeich/gulppack-pug.git```;
 * install ```gulp``` globally: ```yarn global add gulp-cli```;
