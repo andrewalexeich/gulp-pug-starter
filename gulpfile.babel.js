@@ -102,7 +102,20 @@ export const styles = () => src(paths.src.styles)
 		browsers: ["last 12 versions", "> 1%", "ie 8", "ie 7"]
 	})))
 	.pipe(gulpif(production, mincss({
-		compatibility: "ie8", level: {1: {specialComments: 0}
+		compatibility: "ie8", level: {
+			1: {
+				specialComments: 0,
+				removeEmpty: true,
+				removeWhitespace: true
+			},
+			2: {
+				mergeMedia: true,
+				removeEmpty: true,
+				removeDuplicateFontRules: true,
+				removeDuplicateMediaBlocks: true,
+				removeDuplicateRules: true,
+				removeUnusedAtRules: false
+			}
 		}
 	})))
 	.pipe(gulpif(production, rename({
@@ -177,7 +190,9 @@ export const sprites = () => src(paths.src.sprites)
 		}
 	}))
 	.pipe(dest(paths.build.sprites))
-	.pipe(debug({"title": "Sprites"}))
+	.pipe(debug({
+		"title": "Sprites"
+	}))
 	.on("end", browsersync.reload);
 
 export const favs = () => src(paths.src.favicons)
@@ -195,7 +210,9 @@ export const favs = () => src(paths.src.favicons)
 		}
 	}))
 	.pipe(dest(paths.build.favicons))
-	.pipe(debug({"title": "Favicons"}));
+	.pipe(debug({
+		"title": "Favicons"
+	}));
 
 export const development = series(cleanFiles, sprites, parallel(pugToHTML, styles, scripts, images, favs),
 	parallel(watchCode, server));
