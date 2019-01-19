@@ -10,9 +10,9 @@
 
 > Yarn - это современная альтернатива npm. Yarn работает с тем же файлом ```package.json``` и так же скачивает необходимые модули в папку ```node_modules```, но делает это намного быстрее.
 
-* скачайте сборку: ```git clone https://github.com/andreyalexeich/gulppack-scss.git```;
+* скачайте сборку: ```git clone https://github.com/andreyalexeich/gulppack-pug.git```;
 * установите ```gulp``` глобально: ```yarn global add gulp-cli```;
-* перейдите в скачанную папку со сборкой: ```cd gulppack-scss```;
+* перейдите в скачанную папку со сборкой: ```cd gulppack-pug```;
 * введите команду, которая скачает необходимые компоненты для корректной работы нашей сборки, указанные в файле ```package.json```: ```yarn```;
 * введите команду: ```yarn run dev``` (режим разработки);
 * чтобы окончательно завершить проект, введите команду ```yarn run build```.
@@ -71,5 +71,5 @@
 ## Bower?
 Вместо [Bower](https://bower.io/) используйте yarn или npm. Подробнее [тут](https://medium.com/netscape/bye-bye-bower-or-how-to-migrate-from-bower-to-npm-and-webpack-4eb2e1121a50).
 
-## Нужен Pug + SCSS?
-Используйте [эту](https://github.com/andreyalexeich/gulppack-pug/) сборку.
+## Нужен SCSS без Pug?
+Используйте [эту](https://github.com/andreyalexeich/gulppack-scss/) сборку.
