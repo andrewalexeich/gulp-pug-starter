@@ -20,6 +20,7 @@ import imageminGiflossy from "imagemin-giflossy";
 import imageminSvgo from "imagemin-svgo";
 import favicons from "gulp-favicons";
 import svgSprite from "gulp-svg-sprites";
+import raster from "gulp-raster";
 import replace from "gulp-replace";
 import plumber from "gulp-plumber";
 import debug from "gulp-debug";
@@ -184,8 +185,10 @@ export const sprites = () => src(paths.src.sprites)
 	.pipe(svgSprite({
 		preview: false,
 		cssFile: "../../../src/styles/components/_sprite.scss",
+		svgPath: "../img/sprites/sprite.svg",
+		pngPath: "../img/sprites/sprite.png",
 		svg: {
-			sprite: "../../../src/img/sprites/sprite.svg"
+			sprite: "sprite.svg"
 		}
 	}))
 	.pipe(dest(paths.build.sprites))
@@ -193,6 +196,11 @@ export const sprites = () => src(paths.src.sprites)
 		"title": "Sprites"
 	}))
 	.on("end", browsersync.reload);
+
+export const svg2png = () => src(`${paths.build.sprites}**/*.svg`)
+	.pipe(raster())
+	.pipe(rename({ extname: ".png"}))
+	.pipe(dest(paths.build.sprites));
 
 export const favs = () => src(paths.src.favicons)
 	.pipe(favicons({
@@ -213,9 +221,9 @@ export const favs = () => src(paths.src.favicons)
 		"title": "Favicons"
 	}));
 
-export const development = series(cleanFiles, sprites, parallel(pugToHTML, styles, scripts, images, favs),
+export const development = series(cleanFiles, sprites, svg2png, parallel(pugToHTML, styles, scripts, images, favs),
 	parallel(watchCode, server));
 
-export const prod = series(cleanFiles, sprites, serverConfig, pugToHTML, styles, scripts, images, favs);
+export const prod = series(cleanFiles, sprites, svg2png, serverConfig, pugToHTML, styles, scripts, images, favs);
 
 export default development;
