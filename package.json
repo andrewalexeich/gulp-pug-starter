@@ -23,7 +23,6 @@
 		"gulp-babel": "^8.0.0",
 		"gulp-clean": "^0.4.0",
 		"gulp-clean-css": "^3.9.2",
-		"gulp-concat": "^2.6.1",
 		"gulp-debug": "^3.2.0",
 		"gulp-favicons": "^2.2.7",
 		"gulp-if": "^2.0.2",
@@ -47,8 +46,5 @@
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0",
 		"yargs": "^12.0.5"
-	},
-	"dependencies": {
-		"jquery": "^3.3.1"
 	}
 }
