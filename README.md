@@ -27,7 +27,6 @@
 * [gulp-babel](https://www.npmjs.com/package/gulp-babel) - использование ES6 с [Babel](https://babeljs.io/);
 * [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — минификация JS-файлов;
 * [gulp-pug](https://www.npmjs.com/package/gulp-pug) — компиляция Pug в HTML;
-* [gulp-concat](https://www.npmjs.com/package/gulp-concat) - объединение файлов;
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass) — компиляция SCSS в CSS;
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) — минификация CSS-файлов;
 * [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps) - карта стилей;
