@@ -5,8 +5,10 @@ import gulpif from "gulp-if";
 import browsersync from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
 import babel from "gulp-babel";
+import browserify from "browserify";
+import source from "vinyl-source-stream";
+import buffer from "vinyl-buffer";
 import uglify from "gulp-uglify";
-import concat from "gulp-concat";
 import pug from "gulp-pug";
 import sass from "gulp-sass";
 import mincss from "gulp-clean-css";
@@ -130,10 +132,15 @@ export const styles = () => src(paths.src.styles)
 	}))
 	.on("end", browsersync.reload);
 
-export const scripts = () => src(paths.src.scripts)
+export const scripts = () => browserify({
+		entries: "./src/js/main.js",
+		debug: true
+	})
+	.bundle()
+	.pipe(source("main.js"))
+	.pipe(buffer())
 	.pipe(gulpif(!production, sourcemaps.init()))
 	.pipe(babel())
-	.pipe(concat("main.js"))
 	.pipe(gulpif(production, uglify()))
 	.pipe(gulpif(production, rename({
 		suffix: ".min"
