@@ -1,5 +1,5 @@
 {
-	"name": "Gulppack",
+	"name": "gulp-pug-starter",
 	"description": "Frontend development with pleasure",
 	"author": "Andrey Gorokhov, Alexey Khabarovskii",
 	"repository": {
@@ -18,7 +18,7 @@
 		"babelify": "^10.0.0",
 		"browser-sync": "^2.23.6",
 		"browserify": "^16.2.3",
-		"eslint": "^5.6.0",
+		"eslint": "^5.13.0",
 		"gulp": "^4.0.0",
 		"gulp-autoprefixer": "^5.0.0",
 		"gulp-babel": "^8.0.0",
@@ -52,7 +52,12 @@
 	"browserify": {
 		"transform": [
 			[
-				"babelify", {"presets": ["@babel/preset-env"]}
+				"babelify",
+				{
+					"presets": [
+						"@babel/preset-env"
+					]
+				}
 			]
 		]
 	}
