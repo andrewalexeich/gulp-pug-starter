@@ -15,6 +15,7 @@
 		"@babel/core": "^7.0.0",
 		"@babel/preset-env": "^7.1.0",
 		"@babel/register": "^7.0.0",
+		"babel-eslint": "^10.0.1",
 		"babelify": "^10.0.0",
 		"browser-sync": "^2.23.6",
 		"browserify": "^16.2.3",
@@ -30,12 +31,11 @@
 		"gulp-imagemin": "^4.1.0",
 		"gulp-plumber": "^1.2.0",
 		"gulp-pug": "^4.0.1",
-		"gulp-raster": "^0.2.0",
 		"gulp-rename": "^1.2.2",
 		"gulp-replace": "^0.6.1",
 		"gulp-sass": "^3.1.0",
 		"gulp-sourcemaps": "^2.6.4",
-		"gulp-svg-sprites": "^4.1.2",
+		"gulp-svg-sprite": "^1.5.0",
 		"gulp-uglify": "^3.0.0",
 		"gulp-watch": "^5.0.0",
 		"imagemin-giflossy": "^5.1.10",
@@ -48,6 +48,9 @@
 		"vinyl-source-stream": "^2.0.0",
 		"watchify": "^3.11.0",
 		"yargs": "^12.0.5"
+	},
+	"dependencies": {
+		"normalize.css": "^8.0.1"
 	},
 	"browserify": {
 		"transform": [
