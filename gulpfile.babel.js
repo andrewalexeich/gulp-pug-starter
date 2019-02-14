@@ -49,7 +49,6 @@ const paths = {
 			"!./src/img/favicon.{jpg,jpeg,png,gif}"
 		],
 		sprites: "./src/img/svg/*.svg",
-		fonts: "./src/fonts/*.{woff,woff2,ttf,otf,svg}",
 		server_config: "./src/.htaccess"
 	},
 	build: {
@@ -59,8 +58,7 @@ const paths = {
 		scripts: "./dist/js/",
 		favicons: "./dist/img/favicons/",
 		images: "./dist/img/",
-		sprites: "./dist/img/sprites/",
-		fonts: "./dist/fonts/"
+		sprites: "./dist/img/sprites/"
 	}
 };
 
