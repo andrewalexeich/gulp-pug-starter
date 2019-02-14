@@ -42,7 +42,6 @@
 		"imagemin-jpeg-recompress": "^5.1.0",
 		"imagemin-mozjpeg": "^8.0.0",
 		"imagemin-pngquant": "^5.0.1",
-		"imagemin-svgo": "^7.0.0",
 		"imagemin-zopfli": "^6.0.0",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0",

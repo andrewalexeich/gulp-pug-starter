@@ -53,6 +53,7 @@
 * Pug-файлы находятся в папке ```src/views```
 	* компоненты (кнопки, инпуты, чекбоксы и т.д.): ```src/views/components```
 	* основные компоненты (шапка и футер): ```src/views/modules```
+	* страницы: ```src/views/pages```
 	* секции: ```src/views/sections```
 	* миксины: ```src/views/utils```
 * SCSS-файлы находятся в папке ```src/styles```
