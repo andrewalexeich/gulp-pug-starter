@@ -24,7 +24,7 @@
 ## Плагины
 
 * [browser-sync](https://browsersync.io/docs/gulp) - живая перезагрузка веб-страницы при внесении изменений в файлы вашего проекта;
-* [browserify](http://browserify.org/) - использование ```require``` в браузере и проводить сборку зависимостей;
+* [browserify](http://browserify.org/) - использование ```require``` в браузере и проведение сборки зависимостей;
 * [babelify](https://github.com/babel/babelify) - транспайлер [Babel](https://babeljs.io/) для ```browserify```;
 * [watchify](https://github.com/browserify/watchify) - отслеживание изменений для ```browserify```;
 * [eslint](https://eslint.org/) - линтер для JS-файлов;
@@ -98,4 +98,4 @@ $(document).ready(function() {
 отлаживать отдельные части пакета ровно так же, как вы и привыкли это делать с отдельными файлами.
 
 ## Нужен SCSS без Pug?
-Используйте [эту](https://github.com/andreyalexeich/gulppack-scss/) сборку.
+Используйте [эту](https://github.com/andreyalexeich/gulp-scss-starter/) сборку.
