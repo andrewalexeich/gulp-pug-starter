@@ -65,6 +65,7 @@ const paths = {
 
 export const server = () => {
 	browsersync.init({
+		injectChanges: true,
 		server: paths.build.general,
 		port: 9000,
 		tunnel: true,
@@ -73,7 +74,7 @@ export const server = () => {
 };
 
 export const watchCode = () => {
-	watch(paths.src.pug, pugToHTML);
+	watch(paths.src.pug[0], pugToHTML);
 	watch(paths.src.styles, styles);
 	watch(paths.src.scripts, scripts);
 	watch(paths.src.images, images);
@@ -132,7 +133,7 @@ export const styles = () => src(paths.src.styles)
 	.pipe(debug({
 		"title": "CSS files"
 	}))
-	.on("end", browsersync.reload);
+	.pipe(browsersync.stream());
 
 export const scripts = () => {
 	let bundler = browserify({
