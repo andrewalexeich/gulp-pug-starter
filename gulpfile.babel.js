@@ -12,6 +12,7 @@ import buffer from "vinyl-buffer";
 import uglify from "gulp-uglify";
 import pug from "gulp-pug";
 import sass from "gulp-sass";
+import groupmediaqueries from "gulp-group-css-media-queries";
 import mincss from "gulp-clean-css";
 import sourcemaps from "gulp-sourcemaps";
 import rename from "gulp-rename";
@@ -30,6 +31,7 @@ import yargs from "yargs";
 
 const argv = yargs.argv;
 const production = !!argv.production;
+const smartgrid = require("smart-grid");
 
 const paths = {
 	src: {
@@ -93,6 +95,35 @@ export const serverConfig = () => src(paths.src.server_config)
 		"title": "Server config"
 	}));
 
+export const smartGrid = cb => {
+	smartgrid("./src/styles/utils", {
+		outputStyle: "scss",
+		filename: "_smart-grid",
+		columns: 12, // number of grid columns
+		offset: "30px", // gutter width
+		mobileFirst: true,
+		container: {
+			maxWidth: "1110px",
+			fields: "15px"
+		},
+		breakPoints: {
+			xs: {
+				width: "320px"
+			},
+			sm: {
+				width: "576px"
+			},
+			md: {
+				width: "768px"
+			},
+			lg: {
+				width: "992px"
+			}
+		}
+	});
+	cb();
+};
+
 export const pugToHTML = () => src(paths.src.pug)
 	.pipe(pug({pretty: true}))
 	.pipe(gulpif(production, replace("main.css", "main.min.css")))
@@ -127,6 +158,7 @@ export const styles = () => src(paths.src.styles)
 	.pipe(gulpif(production, rename({
 		suffix: ".min"
 	})))
+	.pipe(groupmediaqueries())
 	.pipe(plumber.stop())
 	.pipe(gulpif(!production, sourcemaps.write("./maps/")))
 	.pipe(dest(paths.build.styles))
@@ -242,9 +274,9 @@ export const favs = () => src(paths.src.favicons)
 		"title": "Favicons"
 	}));
 
-export const development = series(cleanFiles, sprites, parallel(pugToHTML, styles, scripts, images, favs),
+export const development = series(cleanFiles, sprites, smartGrid, parallel(pugToHTML, styles, scripts, images, favs),
 	parallel(watchCode, server));
 
-export const prod = series(cleanFiles, sprites, serverConfig, pugToHTML, styles, scripts, images, favs);
+export const prod = series(cleanFiles, sprites, smartGrid, serverConfig, pugToHTML, styles, scripts, images, favs);
 
 export default development;
