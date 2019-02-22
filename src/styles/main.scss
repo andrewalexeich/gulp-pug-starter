@@ -32,10 +32,6 @@ body {
 .wrapper {
 	width: 100%;
 	@include wrapper();
-	&__inner {
-		@include row-flex();
-		justify-content: space-between;
-	}
 	&__title {
 		font-size: 24px;
 		margin-bottom: 20px;
