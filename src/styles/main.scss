@@ -4,7 +4,7 @@
 @import "utils/fonts";
 @import "libs";
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, ul {
 	padding: 0;
 	margin: 0;
 }
@@ -30,9 +30,8 @@ body {
 }
 
 .wrapper {
-	width: 850px;
-	margin: 0 auto;
-	padding: 0 40px;
+	width: 100%;
+	@include wrapper();
 	&__title {
 		font-size: 24px;
 		margin-bottom: 20px;
