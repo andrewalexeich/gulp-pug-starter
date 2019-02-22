@@ -274,9 +274,9 @@ export const favs = () => src(paths.src.favicons)
 		"title": "Favicons"
 	}));
 
-export const development = series(cleanFiles, sprites, smartGrid, parallel(pugToHTML, styles, scripts, images, favs),
+export const development = series(cleanFiles, smartGrid, parallel(pugToHTML, styles, scripts, images, sprites, favs),
 	parallel(watchCode, server));
 
-export const prod = series(cleanFiles, sprites, smartGrid, serverConfig, pugToHTML, styles, scripts, images, favs);
+export const prod = series(cleanFiles, smartGrid, serverConfig, pugToHTML, styles, scripts, images, sprites, favs);
 
 export default development;
