@@ -34,63 +34,74 @@ const production = !!argv.production;
 const smartgrid = require("smart-grid");
 
 const paths = {
-	src: {
-		pug: [
-			"./src/views/**/*.pug",
-			"!./src/views/components/**/*.pug",
-			"!./src/views/modules/**/*.pug",
-			"!./src/views/sections/**/*.pug",
-			"!./src/views/utils/**/*.pug"
+	views: {
+		src: [
+			"./src/views/index.pug",
+			"./src/views/pages/*.pug"
 		],
-		styles: "./src/styles/**/*.scss",
-		scripts: "./src/js/**/*.js",
-		favicons: "./src/img/favicon.{jpg,jpeg,png,gif}",
-		images: [
+		dist: "./dist/",
+		watch: "./src/views/**/*.pug"
+	},
+	styles: {
+		src: "./src/styles/main.scss",
+		dist: "./dist/styles/",
+		watch: "./src/styles/**/*.scss"
+	},
+	scripts: {
+		src: "./src/js/main.js",
+		dist: "./dist/js/",
+		watch: "./src/js/**/*.js"
+	},
+	images: {
+		src: [
 			"./src/img/**/*.{jpg,jpeg,png,gif,svg}",
 			"!./src/img/svg/*.svg",
 			"!./src/img/favicon.{jpg,jpeg,png,gif}"
 		],
-		sprites: "./src/img/svg/*.svg",
-		server_config: "./src/.htaccess"
+		dist: "./dist/img/",
+		watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}"
 	},
-	build: {
-		clean: ["./dist/*", "./dist/.*"],
-		general: "./dist/",
-		styles: "./dist/styles/",
-		scripts: "./dist/js/",
-		favicons: "./dist/img/favicons/",
-		images: "./dist/img/",
-		sprites: "./dist/img/sprites/"
+	sprites: {
+		src: "./src/img/svg/*.svg",
+		dist: "./dist/img/sprites/",
+		watch: "./src/img/svg/*.svg"
+	},
+	favicons: {
+		src: "./src/img/favicon.{jpg,jpeg,png,gif}",
+		dist: "./dist/img/favicons/",
+	},
+	server_config: {
+		src: "./src/.htaccess",
+		dist: "./dist/"
 	}
 };
 
 
 export const server = () => {
 	browsersync.init({
-		injectChanges: true,
-		server: paths.build.general,
-		port: 9000,
+		server: "./dist/",
+		port: 4000,
 		tunnel: true,
-		notify: false
+		notify: true
 	});
 };
 
 export const watchCode = () => {
-	watch(paths.src.pug[0], pugToHTML);
-	watch(paths.src.styles, styles);
-	watch(paths.src.scripts, scripts);
-	watch(paths.src.images, images);
-	watch(paths.src.sprites, sprites);
+	watch(paths.views.watch, views);
+	watch(paths.styles.watch, styles);
+	watch(paths.scripts.watch, scripts);
+	watch(paths.images.watch, images);
+	watch(paths.sprites.watch, sprites);
 };
 
-export const cleanFiles = () => src(paths.build.clean, {read: false})
+export const cleanFiles = () => src("./dist/**/", {read: false})
 	.pipe(clean())
 	.pipe(debug({
 		"title": "Cleaning..."
 	}));
 
-export const serverConfig = () => src(paths.src.server_config)
-	.pipe(dest(paths.build.general))
+export const serverConfig = () => src(paths.server_config.src)
+	.pipe(dest(paths.server_config.dist))
 	.pipe(debug({
 		"title": "Server config"
 	}));
@@ -124,17 +135,18 @@ export const smartGrid = cb => {
 	cb();
 };
 
-export const pugToHTML = () => src(paths.src.pug)
+export const views = () => src(paths.views.src)
 	.pipe(pug({pretty: true}))
 	.pipe(gulpif(production, replace("main.css", "main.min.css")))
 	.pipe(gulpif(production, replace("main.js", "main.min.js")))
-	.pipe(dest(paths.build.general))
+	.pipe(dest(paths.views.dist))
 	.on("end", browsersync.reload);
 
-export const styles = () => src(paths.src.styles)
-	.pipe(plumber())
+export const styles = () => src(paths.styles.src)
 	.pipe(gulpif(!production, sourcemaps.init()))
+	.pipe(plumber())
 	.pipe(sass())
+	.pipe(groupmediaqueries())
 	.pipe(gulpif(production, autoprefixer({
 		browsers: ["last 12 versions", "> 1%", "ie 8", "ie 7"]
 	})))
@@ -158,10 +170,9 @@ export const styles = () => src(paths.src.styles)
 	.pipe(gulpif(production, rename({
 		suffix: ".min"
 	})))
-	.pipe(groupmediaqueries())
 	.pipe(plumber.stop())
 	.pipe(gulpif(!production, sourcemaps.write("./maps/")))
-	.pipe(dest(paths.build.styles))
+	.pipe(dest(paths.styles.dist))
 	.pipe(debug({
 		"title": "CSS files"
 	}))
@@ -169,12 +180,16 @@ export const styles = () => src(paths.src.styles)
 
 export const scripts = () => {
 	let bundler = browserify({
-		entries: "./src/js/main.js",
+		entries: paths.scripts.src,
 		cache: { },
 		packageCache: { },
 		fullPaths: true,
 		debug: true
-	}).transform("babelify", {presets: ["@babel/preset-env"]});
+	}).transform("babelify", {
+		presets: [
+			"@babel/preset-env"
+		]
+	});
 
 	const bundle = () => {
 		return bundler
@@ -189,7 +204,7 @@ export const scripts = () => {
 				suffix: ".min"
 			})))
 			.pipe(gulpif(!production, sourcemaps.write("./maps/")))
-			.pipe(dest(paths.build.scripts))
+			.pipe(dest(paths.scripts.dist))
 			.pipe(debug({
 				"title": "JS files"
 			}))
@@ -204,7 +219,7 @@ export const scripts = () => {
 	return bundle();
 };
 
-export const images = () => src(paths.src.images)
+export const images = () => src(paths.images.src)
 	.pipe(gulpif(production, imagemin([
 		imageminGiflossy({
 			optimizationLevel: 3,
@@ -235,13 +250,13 @@ export const images = () => src(paths.src.images)
 			]
 		})
 	])))
-	.pipe(dest(paths.build.images))
+	.pipe(dest(paths.images.dist))
 	.pipe(debug({
 		"title": "Images"
 	}))
 	.on("end", browsersync.reload);
 
-export const sprites = () => src(paths.src.sprites)
+export const sprites = () => src(paths.sprites.src)
 	.pipe(svgSprite({
 		mode: {
 			stack: {
@@ -249,13 +264,13 @@ export const sprites = () => src(paths.src.sprites)
 			}
 		}
 	}))
-	.pipe(dest(paths.build.sprites))
+	.pipe(dest(paths.sprites.dist))
 	.pipe(debug({
 		"title": "Sprites"
 	}))
 	.on("end", browsersync.reload);
 
-export const favs = () => src(paths.src.favicons)
+export const favs = () => src(paths.favicons.src)
 	.pipe(favicons({
 		icons: {
 			appleIcon: true,
@@ -269,14 +284,14 @@ export const favs = () => src(paths.src.favicons)
 			coast: false
 		}
 	}))
-	.pipe(dest(paths.build.favicons))
+	.pipe(dest(paths.favicons.dist))
 	.pipe(debug({
 		"title": "Favicons"
 	}));
 
-export const development = series(cleanFiles, smartGrid, parallel(pugToHTML, styles, scripts, images, sprites, favs),
+export const development = series(cleanFiles, smartGrid, parallel(views, styles, scripts, images, sprites, favs),
 	parallel(watchCode, server));
 
-export const prod = series(cleanFiles, smartGrid, serverConfig, pugToHTML, styles, scripts, images, sprites, favs);
+export const prod = series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, images, sprites, favs);
 
 export default development;
