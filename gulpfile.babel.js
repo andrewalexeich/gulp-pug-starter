@@ -93,6 +93,7 @@ export const watchCode = () => {
 	gulp.watch(paths.styles.watch, styles);
 	gulp.watch(paths.scripts.watch, scripts);
 	gulp.watch(paths.images.watch, images);
+	gulp.watch(paths.images.watch, webpimages);
 	gulp.watch(paths.sprites.watch, sprites);
 };
 
