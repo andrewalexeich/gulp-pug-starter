@@ -8,6 +8,7 @@ import browsersync from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
 import uglify from "gulp-uglify";
 import pug from "gulp-pug";
+import pugbem from "gulp-pugbem";
 import sass from "gulp-sass";
 import groupmediaqueries from "gulp-group-css-media-queries";
 import mincss from "gulp-clean-css";
@@ -146,7 +147,10 @@ export const smartGrid = cb => {
 };
 
 export const views = () => gulp.src(paths.views.src)
-	.pipe(pug({pretty: true}))
+	.pipe(pug({
+		plugins: [pugbem],
+		pretty: true
+	}))
 	.pipe(gulpif(production, replace("main.css", "main.min.css")))
 	.pipe(gulpif(production, replace("main.js", "main.min.js")))
 	.pipe(gulp.dest(paths.views.dist))
