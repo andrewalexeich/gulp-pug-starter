@@ -10,7 +10,7 @@
 * использование CSS-сетки [smart-grid](https://github.com/dmitry-lavrik/smart-grid) для быстрой адаптивной вёрстки.
 
 ## Установка
-* установите [Yarn](https://yarnpkg.com/en/docs/install).
+* установите [Yarn](https://yarnpkg.com/en/docs/install)
 
 > Yarn - это современная альтернатива npm. Yarn работает с тем же файлом ```package.json``` и так же скачивает необходимые модули в папку ```node_modules```, но делает это намного быстрее.
 
@@ -47,7 +47,7 @@
 * [gulp-debug](https://www.npmjs.com/package/gulp-debug) — отладка в терминале
 * [gulp-watch](https://www.npmjs.com/package/gulp-watch) — отслеживание изменений в ваших файлах проекта
 * [gulp-clean](https://www.npmjs.com/package/gulp-clean) — удаление файлов и папок
-* [yargs](https://www.npmjs.com/package/yargs) - получение аргументов командной строки в Node.js.
+* [yargs](https://www.npmjs.com/package/yargs) - получение аргументов командной строки в Node.js
 
 ## Файловая структура
 
@@ -133,7 +133,7 @@ header.header
 * придерживайтесь компонентного подхода к разработке сайтов
 	* каждый БЭМ-блок имеет свою папку внутри ```src/views/modules/```, в которой в свою очередь находятся один Pug-файл, 
 SCSS-файл и JS-файл (если у блока используется скрипт)
-	* SCSS-файл блока импортируется в ```src/views/modules/_modules.scss```, который в свою очередь импортируется в файл ```src/styles/main.scss```
+	* SCSS-файл блока импортируется в файл ```src/views/modules/_modules.scss```, который в свою очередь импортируется в файл ```src/styles/main.scss```
 	* JS-файл блока импортируется в ```src/js/main.js```
 * из всех SCSS-файлов компилируется только ```main.scss```. Остальные стилевые файлы импортируются в него
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
