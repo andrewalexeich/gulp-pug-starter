@@ -49,9 +49,9 @@ const webpackConfig = require("./webpack.config.js"),
 			watch: "./src/styles/**/*.scss"
 		},
 		scripts: {
-			src: "./src/js/main.js",
+			src: "./src/index.js",
 			dist: "./dist/js/",
-			watch: "./src/js/**/*.js"
+			watch: "./src/**/*.js"
 		},
 		images: {
 			src: [
@@ -191,8 +191,8 @@ export const styles = () => gulp.src(paths.styles.src)
 	.pipe(browsersync.stream());
 
 export const scripts = () => gulp.src(paths.scripts.src)
-	.pipe(gulpif(!production, sourcemaps.init()))
 	.pipe(webpackStream(webpackConfig), webpack)
+	.pipe(gulpif(!production, sourcemaps.init()))
 	.pipe(gulpif(production, uglify()))
 	.pipe(gulpif(production, rename({
 		suffix: ".min"
