@@ -80,7 +80,7 @@ gulp-pug-starter
 	* JS-файлы: ```src/js```
 	* изображения: ```src/img```
 	* конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
-* Папка ```dist``` - папка собранного проекта, из которого запускается сервер (при запуске ```yarn run dev```)
+* Папка ```dist``` - папка, из которой запускается локальный сервер для разработки (при запуске ```yarn run dev```)
 
 ## Именование классов по БЭМ
 В сборке используется плагин шорткатов БЭМ для препроцессора Pug. Пример использования:
@@ -128,6 +128,60 @@ header.header
 </header>
 ```
 
+## CSS-сетка smart-grid
+В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от 
+лишних классов в разметке за счёт использования примесей в SCSS и ускоряет адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap
+.com/). Пример 
+использования:
+
+**SCSS**
+```scss
+.items{
+    @include row-flex();
+    @include md(justify-content, center);
+ 
+    .item{
+        @include col();
+        @include size(3);
+        @include size-md(5);
+        @include size-xs(10);
+    }
+}
+```
+**Результат**
+```css
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.items .item {
+    box-sizing: border-box;
+    margin-left: 15px;
+    margin-right: 15px;
+    word-wrap: break-word;
+    width: calc(100% / 12 * 3 - 30px);
+}
+@media screen and (max-width: 992px) {
+    .items {
+        justify-content: center;
+    }
+    .items .item {
+        width: calc(100% / 12 * 5 - 30px);
+    }
+}
+@media screen and (max-width: 576px) {
+    .items .item {
+        width: calc(100% / 12 * 10 - 30px);
+    }
+}
+```
+
+## WebP 
+В сборщик включена поддержка WebP. WebP — это формат графики, разработанный Google в 2010 году. Он был создан как альтернатива PNG и JPG и отличается от них гораздо 
+меньшим размером при том же качестве изображения. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
+
 ## Рекомендации по использованию
 * придерживайтесь изначальной структуры папок и файлов
 * придерживайтесь компонентного подхода к разработке сайтов
@@ -140,19 +194,15 @@ SCSS-файл и JS-файл (если у блока используется с
 	* для их загрузки воспользуйтеcь командой ```yarn add package_name```
 	* для подключения JS-файлов библиотек импортируйте их в файл ```src/js/main.js``` с помощью ```import```, например: 
 	```javascript 
-	import $ from "jquery"
+	import $ from "jquery";
 	```
 	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/utils/_libs.scss``` (который в свою очередь импортируется в файл 
 	```src/styles/main.scss```) с помощью директивы ```@import```
 * в вёрстку подключаются только минифицированные CSS и JS-файлы.
 
-## WebP 
-WebP — формат графики, разработанный Google в 2010. Он был создан как альтернатива PNG и JPG и отличается от них гораздо меньшим размером при том же качестве изображения. 
-Подробнее [тут](https://habr.com/ru/post/275735/).
-
-## CSS-сетка smart-grid
-В данный сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/), позволяющая избавиться от 
-лишних классов в разметке и ускоряющая адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap.com/).
-
 ## Нужен SCSS без Pug?
 Используйте [эту](https://github.com/andreyalexeich/gulp-scss-starter/) сборку.
+
+## Контакты
+* ВКонтакте: [@andreyalexeich](https://vk.com/andreyalexeich)
+* Telegram: [@andreyalexeich](https://t-do.ru/andreyalexeich)

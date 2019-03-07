@@ -89,9 +89,7 @@ export const server = () => {
 		tunnel: true,
 		notify: true
 	});
-};
 
-export const watchCode = () => {
 	gulp.watch(paths.views.watch, views);
 	gulp.watch(paths.styles.watch, styles);
 	gulp.watch(paths.scripts.watch, scripts);
@@ -113,7 +111,7 @@ export const serverConfig = () => gulp.src(paths.server_config.src)
 	}));
 
 export const smartGrid = cb => {
-	smartgrid("./src/styles/vendor/", {
+	smartgrid("./src/styles/vendor", {
 		outputStyle: "scss",
 		filename: "_smart-grid",
 		columns: 12, // number of grid columns
@@ -289,7 +287,7 @@ export const favs = () => gulp.src(paths.favicons.src)
 
 export const development = gulp.series(cleanFiles, smartGrid,
 	gulp.parallel(views, styles, scripts, images, webpimages, sprites, favs),
-	gulp.parallel(watchCode, server));
+	gulp.parallel(server));
 
 export const prod = gulp.series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, images, webpimages, sprites, favs);
 
