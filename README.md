@@ -1,4 +1,5 @@
 # gulp-pug-starter
+![gulp-pug-starter](https://i.imgur.com/aizcqxh.jpg)
 
 ## Особенности
 * сборка предназначена для автоматизации задач в повседневной front-end разработке
@@ -7,7 +8,7 @@
 * использование препроцессора [SCSS](https://sass-lang.com/)
 * использование транспайлера [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * использование [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
-* использование CSS-сетки [smart-grid](https://github.com/dmitry-lavrik/smart-grid) для быстрой адаптивной вёрстки.
+* использование CSS-сетки [smart-grid](https://github.com/dmitry-lavrik/smart-grid) для быстрой адаптивной вёрстки
 
 ## Установка
 * установите [Yarn](https://yarnpkg.com/en/docs/install)
@@ -56,9 +57,10 @@ gulp-pug-starter
 ├── dist
 ├── src
 │   ├── img
-│   ├── js
 │   ├── styles
-│   └── views
+│   ├── views
+│   ├── index.js
+│   └── .htaccess
 ├── gulpfile.babel.js
 ├── webpack.config.js
 ├── package.json
