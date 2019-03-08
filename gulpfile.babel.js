@@ -22,7 +22,6 @@ import imageminGiflossy from "imagemin-giflossy";
 import imageminWebp from "imagemin-webp";
 import webp from "gulp-webp";
 import favicons from "gulp-favicons";
-import svgSprite from "gulp-svg-sprite";
 import replace from "gulp-replace";
 import plumber from "gulp-plumber";
 import debug from "gulp-debug";
@@ -46,7 +45,10 @@ const webpackConfig = require("./webpack.config.js"),
 		styles: {
 			src: "./src/styles/main.scss",
 			dist: "./dist/styles/",
-			watch: "./src/styles/**/*.scss"
+			watch: [
+				"./src/styles/**/*.scss",
+				"./src/views/**/*.scss"
+			]
 		},
 		scripts: {
 			src: "./src/index.js",
@@ -66,11 +68,6 @@ const webpackConfig = require("./webpack.config.js"),
 			src: "./src/img/**/*_webp.{jpg,jpeg,png}",
 			dist: "./dist/img/",
 			watch: "./src/img/**/*_webp.{jpg,jpeg,png}"
-		},
-		sprites: {
-			src: "./src/img/svg/*.svg",
-			dist: "./dist/img/sprites/",
-			watch: "./src/img/svg/*.svg"
 		},
 		favicons: {
 			src: "./src/img/favicon.{jpg,jpeg,png,gif}",
@@ -95,7 +92,6 @@ export const server = () => {
 	gulp.watch(paths.scripts.watch, scripts);
 	gulp.watch(paths.images.watch, images);
 	gulp.watch(paths.webp.watch, webpimages);
-	gulp.watch(paths.sprites.watch, sprites);
 };
 
 export const cleanFiles = () => gulp.src("./dist/*", {read: false})
@@ -242,29 +238,15 @@ export const images = () => gulp.src(paths.images.src)
 	.on("end", browsersync.reload);
 
 export const webpimages = () => gulp.src(paths.webp.src)
-	.pipe(webp(imageminWebp({
+	.pipe(webp(gulpif(production, imageminWebp({
 		lossless: true,
-		quality: 75,
-		alphaQuality: 75
-	})))
+		quality: 90,
+		alphaQuality: 90
+	}))))
 	.pipe(gulp.dest(paths.webp.dist))
 	.pipe(debug({
 		"title": "WebP images"
 	}));
-
-export const sprites = () => gulp.src(paths.sprites.src)
-	.pipe(svgSprite({
-		mode: {
-			stack: {
-				sprite: "../sprite.svg"
-			}
-		}
-	}))
-	.pipe(gulp.dest(paths.sprites.dist))
-	.pipe(debug({
-		"title": "Sprites"
-	}))
-	.on("end", browsersync.reload);
 
 export const favs = () => gulp.src(paths.favicons.src)
 	.pipe(favicons({
@@ -286,9 +268,9 @@ export const favs = () => gulp.src(paths.favicons.src)
 	}));
 
 export const development = gulp.series(cleanFiles, smartGrid,
-	gulp.parallel(views, styles, scripts, images, webpimages, sprites, favs),
+	gulp.parallel(views, styles, scripts, images, webpimages, favs),
 	gulp.parallel(server));
 
-export const prod = gulp.series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, images, webpimages, sprites, favs);
+export const prod = gulp.series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, images, webpimages, favs);
 
 export default development;
