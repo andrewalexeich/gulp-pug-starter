@@ -27,7 +27,8 @@
 
 ## Плагины
 * [browser-sync](https://browsersync.io/docs/gulp) - живая перезагрузка веб-страницы при внесении изменений в файлы вашего проекта
-* [webpack-stream](https://github.com/shama/webpack-stream) - интеграция Webpack с Gulp 
+* [webpack-stream](https://github.com/shama/webpack-stream) - интеграция Webpack с Gulp
+* [bem-tools](https://github.com/bem-tools) - инструменты для работы с файлами по методологии БЭМ
 * [eslint](https://eslint.org/) - линтер для JS-файлов
 * [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) — автоматически расставляет вендорные префиксы в CSS в соответствии с сервисом [Can I Use](https://caniuse.com/)
 * [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) — минификация JS-файлов
@@ -74,6 +75,7 @@ gulp-pug-starter
 
 * Корень папки:
 	* ```.babelrc``` — настройка ES6
+	* ```.bemrc.js``` — настройка БЭМ
 	* ```.eslintrc.json``` — настройка ESLint
 	* ```.gitignore``` – запрет на отслеживание файлов Git'ом
 	* ```gulpfile.babel.js``` — настройки Gulp
@@ -117,13 +119,16 @@ gulp-pug-starter
 	```javascript 
 	import $ from "jquery";
 	```
-	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/helpers/_libs.scss``` (который в свою очередь импортируется в файл 
+	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/_libs.scss``` (который в свою очередь импортируется в файл 
 	```src/styles/main.scss```)
 * в вёрстку подключаются только минифицированные CSS и JS-файлы.
 
-## Именование классов по БЭМ
-В сборке используется компонентный подход к разработке сайтов. Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример 
-использования:
+## БЭМ
+В сборке используется компонентный подход к разработке сайтов по методолгии БЭМ, когда каждый БЭМ-блок имеет свою папку, внутри которой находятся один Pug-файл,  
+один SCSS-файл и один JS-файл (если у блока используется скрипт). Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли написать ```bem create 
+my-block``` для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока, или ```bem create my-component -l src/blocks/components``` для создания компонента. Также можно 
+создать всё вместе: ```bem create my-component -l src/blocks/components && bem create myblock```.
+Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример использования:
 
 **Pug**
 ```jade
