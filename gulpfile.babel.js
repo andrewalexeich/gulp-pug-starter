@@ -40,20 +40,27 @@ const webpackConfig = require("./webpack.config.js"),
 				"./src/pages/*.pug"
 			],
 			dist: "./dist/",
-			watch: "./src/**/*.pug"
+			watch: [
+				"./src/blocks/**/*.pug",
+				"./src/pages/**/*.pug",
+				"./src/views/**/*.pug"
+			]
 		},
 		styles: {
 			src: "./src/styles/main.scss",
 			dist: "./dist/styles/",
 			watch: [
-				"./src/styles/**/*.scss",
-				"./src/**/*.scss"
+				"./src/blocks/**/*.scss",
+				"./src/styles/**/*.scss"
 			]
 		},
 		scripts: {
-			src: "./src/index.js",
+			src: "./src/js/index.js",
 			dist: "./dist/js/",
-			watch: "./src/**/*.js"
+			watch: [
+				"./src/blocks/**/*.js",
+				"./src/js/**/*.js"
+			]
 		},
 		images: {
 			src: [
