@@ -1,5 +1,5 @@
-# gulp-pug-starter
 ![gulp-pug-starter](https://i.imgur.com/0AG0txq.png)
+# gulp-pug-starter
 
 ## Особенности
 * сборка предназначена для автоматизации задач в повседневной front-end разработке
@@ -16,7 +16,7 @@
 > Yarn - это современная альтернатива npm. Yarn работает с тем же файлом ```package.json``` и так же скачивает необходимые модули в папку ```node_modules```, но делает это намного быстрее.
 
 * скачайте сборку: ```git clone https://github.com/andreyalexeich/gulp-pug-starter.git```
-* установите ```gulp``` глобально: ```yarn global add gulp-cli```
+* установите ```gulp``` и ```eslint``` глобально: ```yarn global add gulp-cli eslint```
 * перейдите в скачанную папку со сборкой: ```cd gulp-pug-starter```
 * скачайте необходимые зависимости: ```yarn```
 * чтобы начать работу, введите команду: ```yarn run dev``` (режим разработки)
@@ -127,6 +127,7 @@ gulp-pug-starter
 * ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
 * ```bem create my-component -l src/blocks/components -T pug -T scss``` для создания компонента
 * ```bem create my-component -l src/blocks/components -T pug -T scss && bem create my-block``` - создать всё вместе
+
 Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример использования:
 
 **Pug**
