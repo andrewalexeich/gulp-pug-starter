@@ -127,6 +127,7 @@ gulp-pug-starter
 * ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
 * ```bem create my-component -l src/blocks/components -T pug -T scss``` для создания компонента
 * ```bem create my-component -l src/blocks/components -T pug -T scss && bem create my-block``` - создать всё вместе
+
 Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример использования:
 
 **Pug**

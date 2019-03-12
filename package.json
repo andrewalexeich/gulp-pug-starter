@@ -11,6 +11,9 @@
 		"dev": "gulp",
 		"build": "gulp prod --production"
 	},
+	"installConfig": {
+		"pnp": true
+	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
 		"@babel/preset-env": "^7.1.0",
