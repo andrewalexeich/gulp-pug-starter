@@ -95,7 +95,6 @@ export const server = () => {
 	browsersync.init({
 		server: "./dist/",
 		port: 4000,
-		tunnel: true,
 		notify: true
 	});
 
