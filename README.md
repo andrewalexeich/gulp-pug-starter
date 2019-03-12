@@ -67,13 +67,14 @@ gulp-pug-starter
 ├── gulpfile.babel.js
 ├── webpack.config.js
 ├── package.json
-├── .babelrc
+├── .babelrc.js
+├── .bemrc.js
 ├── .eslintrc.json
 └── .gitignore
 ```
 
 * Корень папки:
-	* ```.babelrc``` — настройка ES6
+	* ```.babelrc.js``` — настройка ES6
 	* ```.bemrc.js``` — настройка БЭМ
 	* ```.eslintrc.json``` — настройка ESLint
 	* ```.gitignore``` – запрет на отслеживание файлов Git'ом
