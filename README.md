@@ -127,8 +127,8 @@ gulp-pug-starter
 В сборке используется компонентный подход к разработке сайтов по методолгии БЭМ, когда каждый БЭМ-блок имеет свою папку, внутри которой находятся один Pug-файл, один SCSS-файл и
 один JS-файл (если у блока используется скрипт). Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды: 
 * ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
-* ```bem create my-component -l src/blocks/components -T pug -T scss``` для создания компонента
-* ```bem create my-component -l src/blocks/components -T pug -T scss && bem create my-block``` - создать всё вместе
+* ```bem create my-component -l src/blocks/components``` для создания компонента
+* ```bem create my-component -l src/blocks/components && bem create my-block``` - создать всё вместе
 
 Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример использования:
 
