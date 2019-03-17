@@ -1,10 +1,10 @@
 const path = require("path");
 
 module.exports = {
-	mode: "none",
 	output: {
 		filename: "[name].js"
 	},
+
 	module: {
 		rules: [
 			{
@@ -21,12 +21,14 @@ module.exports = {
 			}
 		]
 	},
+
 	resolve: {
 		alias: {
 			"%modules%": path.resolve(__dirname, "src/blocks/modules"),
 			"%components%": path.resolve(__dirname, "src/blocks/components")
 		}
 	},
+
 	optimization: {
 		splitChunks: {
 			cacheGroups: {

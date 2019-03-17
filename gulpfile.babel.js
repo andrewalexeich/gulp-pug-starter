@@ -6,7 +6,6 @@ import gulp from "gulp";
 import gulpif from "gulp-if";
 import browsersync from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
-import uglify from "gulp-uglify";
 import pug from "gulp-pug";
 import pugbem from "gulp-pugbem";
 import sass from "gulp-sass";
@@ -90,6 +89,9 @@ const webpackConfig = require("./webpack.config.js"),
 			dist: "./dist/"
 		}
 	};
+
+webpackConfig.mode = production ? "production" : "development";
+webpackConfig.devtool = production ? false : "cheap-eval-source-map";
 
 export const server = () => {
 	browsersync.init({
@@ -199,12 +201,9 @@ export const styles = () => gulp.src(paths.styles.src)
 
 export const scripts = () => gulp.src(paths.scripts.src)
 	.pipe(webpackStream(webpackConfig), webpack)
-	.pipe(gulpif(!production, sourcemaps.init()))
-	.pipe(gulpif(production, uglify()))
 	.pipe(gulpif(production, rename({
 		suffix: ".min"
 	})))
-	.pipe(gulpif(!production, sourcemaps.write("./maps/")))
 	.pipe(gulp.dest(paths.scripts.dist))
 	.pipe(debug({
 		"title": "JS files"
