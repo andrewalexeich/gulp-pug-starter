@@ -219,7 +219,7 @@ export const images = () => gulp.src(paths.images.src)
 		}),
 		imageminPngquant({
 			speed: 5,
-			quality: 75
+			quality: [0.3, 0.5]
 		}),
 		imageminZopfli({
 			more: true
@@ -259,7 +259,7 @@ export const webpimages = () => gulp.src(paths.webp.src)
 	}));
 
 export const fonts = () => gulp.src(paths.fonts.src)
-	.pipe(gulp.dest(paths.webp.dist))
+	.pipe(gulp.dest(paths.fonts.dist))
 	.pipe(debug({
 		"title": "Fonts"
 	}));
