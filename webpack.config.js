@@ -27,18 +27,5 @@ module.exports = {
 			"%modules%": path.resolve(__dirname, "src/blocks/modules"),
 			"%components%": path.resolve(__dirname, "src/blocks/components")
 		}
-	},
-
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				vendors: {
-					test: /[\\/]node_modules[\\/]/,
-					name: "vendor",
-					chunks: "all",
-					minChunks: 1
-				}
-			}
-		}
-	},
+	}
 };
