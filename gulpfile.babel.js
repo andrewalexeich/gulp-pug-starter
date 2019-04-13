@@ -9,8 +9,10 @@ import autoprefixer from "gulp-autoprefixer";
 import pug from "gulp-pug";
 import pugbem from "gulp-pugbem";
 import sass from "gulp-sass";
-import groupmediaqueries from "gulp-group-css-media-queries";
+import mqpacker from "css-mqpacker";
+import sortCSSmq from "sort-css-media-queries";
 import mincss from "gulp-clean-css";
+import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 import rename from "gulp-rename";
 import imagemin from "gulp-imagemin";
@@ -167,7 +169,11 @@ export const styles = () => gulp.src(paths.styles.src)
 	.pipe(gulpif(!production, sourcemaps.init()))
 	.pipe(plumber())
 	.pipe(sass())
-	.pipe(groupmediaqueries())
+	.pipe(postcss([
+		mqpacker({
+			sort: sortCSSmq
+		})
+	]))
 	.pipe(gulpif(production, autoprefixer({
 		browsers: ["last 12 versions", "> 1%", "ie 8", "ie 7"]
 	})))
@@ -219,7 +225,7 @@ export const images = () => gulp.src(paths.images.src)
 		}),
 		imageminPngquant({
 			speed: 5,
-			quality: [0.3, 0.5]
+			quality: "30-50"
 		}),
 		imageminZopfli({
 			more: true

@@ -20,6 +20,7 @@
 		"bem-tools-core": "bem-tools/bem-tools-core",
 		"bem-tools-create": "bem-tools/bem-tools-create",
 		"browser-sync": "^2.23.6",
+		"css-mqpacker": "^7.0.0",
 		"eslint": "^5.15.1",
 		"gulp": "^4.0.0",
 		"gulp-autoprefixer": "^5.0.0",
@@ -31,6 +32,7 @@
 		"gulp-if": "^2.0.2",
 		"gulp-imagemin": "^5.0.3",
 		"gulp-plumber": "^1.2.0",
+		"gulp-postcss": "^8.0.0",
 		"gulp-pug": "^4.0.1",
 		"gulp-pugbem": "^2.1.3",
 		"gulp-rename": "^1.2.2",
@@ -45,6 +47,7 @@
 		"imagemin-pngquant": "^5.0.1",
 		"imagemin-webp": "^5.0.0",
 		"imagemin-zopfli": "^6.0.0",
+		"sort-css-media-queries": "^1.4.3",
 		"webpack": "^4.29.6",
 		"webpack-stream": "^5.2.1",
 		"yargs": "^12.0.5"
