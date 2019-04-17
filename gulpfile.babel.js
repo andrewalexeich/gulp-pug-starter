@@ -225,7 +225,7 @@ export const images = () => gulp.src(paths.images.src)
 		}),
 		imageminPngquant({
 			speed: 5,
-			quality: "30-50"
+			quality: [0.6, 0.8]
 		}),
 		imageminZopfli({
 			more: true
