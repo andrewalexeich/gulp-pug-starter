@@ -1,7 +1,7 @@
 ![gulp-pug-starter](https://i.imgur.com/0AG0txq.png)
 # gulp-pug-starter
 
-Если вам нравится то, что я делаю, был бы рад поддержке в виде любой суммы :)
+Если вам нравится то, что я делаю, был бы рад поддержке в виде любой суммы :beer:
 
 [<img src="https://img.shields.io/badge/На_пиво-Visa%2C%20Mastercard-blue.svg">](https://money.yandex.ru/to/410012412398919)
 
