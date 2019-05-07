@@ -15,6 +15,7 @@ import mincss from "gulp-clean-css";
 import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 import rename from "gulp-rename";
+import svg from "gulp-svg-sprite";
 import imagemin from "gulp-imagemin";
 import imageminPngquant from "imagemin-pngquant";
 import imageminZopfli from "imagemin-zopfli";
@@ -63,6 +64,11 @@ const webpackConfig = require("./webpack.config.js"),
 				"./src/js/**/*.js"
 			]
 		},
+		svg: {
+			src: "./src/img/svg/*.svg",
+			watch: "./src/img/svg/*.svg",
+			dist: "./dist/img/sprites/",
+		},
 		images: {
 			src: [
 				"./src/img/**/*.{jpg,jpeg,png,gif,svg}",
@@ -105,6 +111,7 @@ export const server = () => {
 	gulp.watch(paths.views.watch, views);
 	gulp.watch(paths.styles.watch, styles);
 	gulp.watch(paths.scripts.watch, scripts);
+	gulp.watch(paths.svg.watch, svgsprites);
 	gulp.watch(paths.images.watch, images);
 	gulp.watch(paths.webp.watch, webpimages);
 };
@@ -216,6 +223,23 @@ export const scripts = () => gulp.src(paths.scripts.src)
 	}))
 	.on("end", browsersync.reload);
 
+export const svgsprites = () => gulp.src(paths.svg.src)
+	.pipe(svg({
+		shape: {
+			dest: "intermediate-svg"
+		},
+		mode: {
+			stack: {
+				sprite: "../sprite.svg"
+			}
+		}
+	}))
+	.pipe(gulp.dest(paths.svg.dist))
+	.pipe(debug({
+		"title": "Sprites"
+	}))
+	.on("end", browsersync.reload);
+
 export const images = () => gulp.src(paths.images.src)
 	.pipe(gulpif(production, imagemin([
 		imageminGiflossy({
@@ -290,9 +314,9 @@ export const favs = () => gulp.src(paths.favicons.src)
 	}));
 
 export const development = gulp.series(cleanFiles, smartGrid,
-	gulp.parallel(views, styles, scripts, images, webpimages, fonts, favs),
+	gulp.parallel(views, styles, scripts, svgsprites, images, webpimages, fonts, favs),
 	gulp.parallel(server));
 
-export const prod = gulp.series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, images, webpimages, fonts, favs);
+export const prod = gulp.series(cleanFiles, smartGrid, serverConfig, views, styles, scripts, svgsprites, images, webpimages, fonts, favs);
 
 export default development;
