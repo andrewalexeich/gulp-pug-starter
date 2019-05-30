@@ -99,7 +99,7 @@ const webpackConfig = require("./webpack.config.js"),
 	};
 
 webpackConfig.mode = production ? "production" : "development";
-webpackConfig.devtool = production ? false : "cheap-eval-source-map";
+webpackConfig.devtool = production ? false : "source-map";
 
 export const server = () => {
 	browsersync.init({
