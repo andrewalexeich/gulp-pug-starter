@@ -110,10 +110,10 @@ AddType text/vtt .vtt
 	ExpiresDefault "access plus 2 days"
 
 	# HTML
-	ExpiresByType text/html "access plus 1 minute"
+	ExpiresByType text/html "access plus 1 second"
 
 	# CSS
-	ExpiresByType text/css "access plus 1 hour"
+	ExpiresByType text/css "access plus 1 month"
 
 	# JavaScript
 	ExpiresByType application/javascript "access plus 1 month"
@@ -147,7 +147,7 @@ AddType text/vtt .vtt
 	ExpiresByType image/jpeg "access plus 1 month"
 	ExpiresByType image/jpg "access plus 1 month"
 	ExpiresByType image/png "access plus 1 month"
-	ExpiresByType image/svg+xml "access plus 6 months"
+	ExpiresByType image/svg+xml "access plus 1 month"
 	ExpiresByType image/webp "access plus 1 month"
 	ExpiresByType video/mp4 "access plus 1 month"
 	ExpiresByType video/ogg "access plus 1 month"
@@ -163,18 +163,13 @@ AddType text/vtt .vtt
 
 # Alternative caching using Apache's "mod_headers", if it's installed
 <IfModule mod_headers.c>
-	# 5 min - HTML
+	# 1 sec - HTML
 	<FilesMatch "\.(html|htm)$">
-		Header set Cache-Control "max-age=60"
+		Header set Cache-Control "max-age=1"
 	</FilesMatch>
 
-	# 1 hour - CSS
-	<FilesMatch "\.(css|txt)$">
-		Header set Cache-Control "max-age=3600"
-	</FilesMatch>
-
-	# 1 month - Media, JS
-	<FilesMatch "\.(bmp|gif|jpg|jpeg|png|webp|mp4|ogg|webm|js)$">
+	# 1 month - Media, JS, CSS
+	<FilesMatch "\.(bmp|gif|jpg|jpeg|png|svg|webp|mp4|ogg|webm|js|css)$">
 		Header set Cache-Control "max-age=2592000, public"
 	</FilesMatch>
 
