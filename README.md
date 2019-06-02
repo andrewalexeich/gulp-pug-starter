@@ -1,6 +1,4 @@
-<p style="text-align: center">
-    <img src="https://i.imgur.com/x2VJQds.png">
-</p>
+<img style="display: block; margin: 0 auto" src="https://i.imgur.com/x2VJQds.png">
 
 Если вам нравится то, что я делаю, был бы рад поддержке в виде любой суммы :beer:
 
