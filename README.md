@@ -1,5 +1,6 @@
-![gulp-pug-starter](https://i.imgur.com/0AG0txq.png)
-# gulp-pug-starter
+<p style="text-align: center">
+    <img src="https://i.imgur.com/x2VJQds.png">
+</p>
 
 Если вам нравится то, что я делаю, был бы рад поддержке в виде любой суммы :beer:
 
@@ -34,6 +35,7 @@
 ```
 gulp-pug-starter
 ├── dist
+├── gulp-tasks
 ├── src
 │   ├── blocks
 │   ├── fonts
@@ -70,6 +72,7 @@ gulp-pug-starter
 	* Pug-файлы: ```src/views```
 	* конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
 * Папка ```dist``` - папка, из которой запускается локальный сервер для разработки (при запуске ```yarn run dev```)
+* Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Рекомендации по использованию
 * придерживайтесь изначальной структуры папок и файлов
