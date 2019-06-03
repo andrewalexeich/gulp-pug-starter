@@ -210,9 +210,9 @@ header.header
 ## Нужен SCSS без Pug?
 Используйте [эту](https://github.com/andreyalexeich/gulp-scss-starter/) сборку.
 
+## Нравится проект?
+Сообщайте мне о [багах](https://github.com/andreyalexeich/gulp-pug-starter/issues), ставьте звёздочку в правом верхнем углу, задонатьте мне на пиво :beer:
+
 ## Контакты
 * ВКонтакте: [@andreyalexeich](https://vk.com/andreyalexeich)
 * Telegram: [@andreyalexeich](https://t-do.ru/andreyalexeich)
-
-## Нравится проект
-Сообщайте мне о [багах](https://github.com/andreyalexeich/gulp-pug-starter/issues), ставьте звёздочку в правом верхнем углу, задонатьте мне на пиво :beer:
