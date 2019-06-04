@@ -1,27 +1,23 @@
+# gulp-pug-starter
 ![Uses](https://img.shields.io/badge/%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-Pug%2C%20SCSS%2C%20ES6-informational.svg)
 ![GitHub release](https://img.shields.io/github/release/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![David](https://img.shields.io/david/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/andreyalexeich/gulp-pug-starter.svg?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/andreyalexeich/gulp-pug-starter.svg?style=social)
 
-# gulp-pug-starter
-
 ## Особенности
-* сборка предназначена для автоматизации задач в повседневной front-end разработке
 * именование классов по [БЭМ](https://ru.bem.info/)
-* использование препроцессора [Pug](https://pugjs.org/api/getting-started.html)
-* использование препроцессора [SCSS](https://sass-lang.com/)
-* использование транспайлера [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
-* использование [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
-* использование CSS-сетки [smart-grid](https://github.com/dmitry-lavrik/smart-grid) для быстрой адаптивной вёрстки
+* используется БЭМ-структура
+* используются препроцессоры [Pug](https://pugjs.org/) и [SCSS](https://sass-lang.com/)
+* используется транспайлер [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
+* используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
+* используется CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) на основе Bootstrap для быстрой адаптивной вёрстки
+* используется жёсткий кодгайд
 
 ## Установка
-* установите [Yarn](https://yarnpkg.com/en/docs/install)
-
-> Yarn - это современная альтернатива npm. Yarn работает с тем же файлом ```package.json``` и так же скачивает необходимые модули в папку ```node_modules```, но делает это намного быстрее.
-
-* скачайте сборку с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/andreyalexeich/gulp-pug-starter.git```
-* установите ```gulp``` и ```bem-tools-core``` глобально: ```yarn global add gulp-cli bem-tools-core```
+* установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
+* скачайте сборку в консоли с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/andreyalexeich/gulp-pug-starter.git```
+* установите ```gulp``` глобально: ```yarn global add gulp-cli```
 * перейдите в скачанную папку со сборкой: ```cd gulp-pug-starter```
 * скачайте необходимые зависимости: ```yarn```
 * чтобы начать работу, введите команду: ```yarn run dev``` (режим разработки)
@@ -51,58 +47,80 @@ gulp-pug-starter
 ├── .babelrc.js
 ├── .bemrc.js
 ├── .eslintrc.json
+├── .stylelintrc
+├── .stylelintignore
 └── .gitignore
 ```
 
 * Корень папки:
-	* ```.babelrc.js``` — настройки Babel
-	* ```.bemrc.js``` — настройки БЭМ
-	* ```.eslintrc.json``` — настройки ESLint
-	* ```.gitignore``` – запрет на отслеживание файлов Git'ом
-	* ```gulpfile.babel.js``` — настройки Gulp
-	* ```webpack.config.js``` — настройки Webpack
-	* ```package.json``` — список зависимостей
+    * ```.babelrc.js``` — настройки Babel
+    * ```.bemrc.js``` — настройки БЭМ
+    * ```.eslintrc.json``` — настройки ESLint
+    * ```.gitignore``` – запрет на отслеживание файлов Git'ом
+    * ```.stylelintrc``` — настройки Stylelint
+    * ```.stylelintignore``` – запрет на отслеживание файлов Stylelint'ом
+    * ```gulpfile.babel.js``` — настройки Gulp
+    * ```webpack.config.js``` — настройки Webpack
+    * ```package.json``` — список зависимостей
 * Папка ```src``` - используется во время разработки:
-	* БЭМ-блоки и компоненты: ```src/blocks```
-	* шрифты: ```src/fonts```
-	* изображения: ```src/img```
-	* JS-файлы: ```src/js```
-	* страницы сайта: ```src/pages```
-	* SCSS-файлы: ```src/styles```
-	* Pug-файлы: ```src/views```
-	* конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
+    * БЭМ-блоки и компоненты: ```src/blocks```
+    * шрифты: ```src/fonts```
+    * изображения: ```src/img```
+    * JS-файлы: ```src/js```
+    * страницы сайта: ```src/pages```
+    * SCSS-файлы: ```src/styles```
+    * служебные Pug-файлы: ```src/views```
+    * конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
 * Папка ```dist``` - папка, из которой запускается локальный сервер для разработки (при запуске ```yarn run dev```)
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
+## Команды
+* ```yarn run lint:style```: проверить SCSS-файлы
+* ```yarn run dev```: запуск сервера для разработки проекта
+* ```yarn run build```: собрать проект с оптимизацией без запуска сервера
+* ```yarn run build views```: скомпилировать Pug-файлы
+* ```yarn run build styles```: скомпилировать SCSS-файлы
+* ```yarn run build scripts```: собрать JS-файлы
+* ```yarn run build images```: собрать изображения
+* ```yarn run build sprites```: собрать спрайты
+* ```yarn run build fonts```: собрать шрифты
+* ```yarn run build favicons```: собрать фавиконки
+* ```yarn run build gzip```: собрать конфигурацию Apache
+
 ## Рекомендации по использованию
-* придерживайтесь изначальной структуры папок и файлов
-* придерживайтесь компонентного подхода к разработке сайтов
-	* каждый БЭМ-блок имеет свою папку внутри ```src/blocks/modules```
-	* папка одного БЭМ-блока содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у блока используется скрипт)
-	* Pug-файл блока импортируется в файл ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться блок)
-	* SCSS-файл блока импортируется в файл ```src/blocks/modules/_modules.scss```
-	* JS-файл блока импортируется в ```src/js/import/modules.js```
+#### Компонентный подход к разработке сайтов
+* каждый БЭМ-блок имеет свою папку внутри ```src/blocks/modules```
+* папка одного БЭМ-блока содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у блока используется скрипт)
+    * Pug-файл блока импортируется в файл ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться блок)
+    * SCSS-файл блока импортируется в файл ```src/blocks/modules/_modules.scss```
+    * JS-файл блока импортируется в ```src/js/import/modules.js```
+#### Компоненты
 * компоненты (например, иконки, кнопки) оформляются в Pug с помощью примесей
-	* каждый компонент имеет свою папку внутри ```src/blocks/components```
-	* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл
-	* Pug-файл компонента импортируется в файл главной страницы ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться компонент)
-	* SCSS-файл компонента импортируется в файл ```src/blocks/components/_components.scss```
-	* JS-файл компонента импортируется в файл ```src/js/import/components.js```
-* из всех SCSS-файлов компилируется только ```main.scss```. Остальные стилевые файлы импортируются в него
-* страницы сайта находятся в папке ```src/pages```
-	* каждая страница (в том числе главная) наследует шаблон ```src/views/layouts/default.pug```
-	* главная страница: ```src/views/index.pug```
+* каждый компонент имеет свою папку внутри ```src/blocks/components```
+* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл
+    * Pug-файл компонента импортируется в файл главной страницы ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться компонент)
+    * SCSS-файл компонента импортируется в файл ```src/blocks/components/_components.scss```
+    * JS-файл компонента импортируется в файл ```src/js/import/components.js```
+#### Страницы проекта
+* страницы проекта находятся в папке ```src/pages```
+    * каждая страница (в том числе главная) наследует шаблон ```src/views/layouts/default.pug```
+    * главная страница: ```src/views/index.pug```
+#### Шрифты
 * шрифты находятся в папке ```src/fonts```
+    * используйте [форматы](https://caniuse.com/#search=woff) ```woff``` и ```woff2```
+    * шрифты подключаются в файл ```src/styles/general/_fonts.scss```
+#### Изображения 
 * изображения находятся в папке ```src/img```
-	* изображение для генерации фавиконок должно находиться в папке ```src/img``` и иметь размер не менее ```180px x 180px```
+    * изображение для генерации фавиконок должно находиться в папке ```src/img``` и иметь размер не менее ```180px x 180px```
+    * изображения автоматически конвертируются в формат ```.webp```. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
+#### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
 	* для их загрузки воспользуйтеcь командой ```yarn add package_name```
 	* для подключения JS-файлов библиотек импортируйте их в самом начале JS-файла БЭМ-блока (то есть тот БЭМ-блок, который использует скрипт), например: 
 	```javascript 
 	import $ from "jquery";
 	```
-	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/_libs.scss```
-* в вёрстку подключаются только минифицированные CSS и JS-файлы.
+	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/main.scss```
 
 ## БЭМ
 В сборке используется компонентный подход к разработке сайтов по методолгии БЭМ, когда каждый БЭМ-блок имеет свою папку, внутри которой находятся один Pug-файл, один SCSS-файл и
@@ -204,14 +222,11 @@ header.header
 }
 ```
 
-## WebP 
-В сборщик включена поддержка WebP. WebP — это формат графики, разработанный Google в 2010 году. Он был создан как альтернатива PNG и JPG и отличается от них гораздо меньшим размером при том же качестве изображения. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
-
 ## Нужен SCSS без Pug?
 Используйте [эту](https://github.com/andreyalexeich/gulp-scss-starter/) сборку.
 
 ## Нравится проект?
-Сообщайте мне о [багах](https://github.com/andreyalexeich/gulp-pug-starter/issues), ставьте звёздочку в правом верхнем углу, задонатьте мне на пиво :beer:
+Сообщайте мне о [багах](https://github.com/andreyalexeich/gulp-pug-starter/issues), ставьте звёздочку в правом верхнем углу, [задонатьте](https://www.tinkoff.ru/cardtocard/) мне на пиво :beer:
 
 ## Контакты
 * ВКонтакте: [@andreyalexeich](https://vk.com/andreyalexeich)
