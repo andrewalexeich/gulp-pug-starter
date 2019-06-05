@@ -1,6 +1,6 @@
 # gulp-pug-starter
 ![Uses](https://img.shields.io/badge/uses-Pug%2C%20SCSS%2C%20ES6-informational.svg)
-![Donate](https://img.shields.io/badge/donate%20to%20me-5536%209137%205288%201934-informational.svg?link=https://www.tinkoff.ru/cardtocard/&link=https://www.tinkoff.ru/cardtocard/)
+![Donate](https://img.shields.io/badge/donate%20to%20me-5536%209137%205288%201934-informational.svg?url=https://www.tinkoff.ru/cardtocard/)
 ![GitHub release](https://img.shields.io/github/release/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![David](https://img.shields.io/david/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/andreyalexeich/gulp-pug-starter.svg?style=social)
