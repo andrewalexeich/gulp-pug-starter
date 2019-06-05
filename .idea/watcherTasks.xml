@@ -14,7 +14,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="$PROJECT_DIR$/node_modules/stylelint/bin/stylelint.js" />
+      <option name="program" value="$ProjectFileDir$/node_modules/stylelint/bin/stylelint.js" />
       <option name="runOnExternalChanges" value="true" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
