@@ -1,8 +1,10 @@
 # gulp-pug-starter
 ![Uses](https://img.shields.io/badge/uses-Pug%2C%20SCSS%2C%20ES6-informational.svg)
-![Donate](https://img.shields.io/badge/donate%20to%20me-5536%209137%205288%201934-informational.svg?link=https://www.tinkoff.ru/cardtocard/&link=https://www.tinkoff.ru/cardtocard/)
-![GitHub release](https://img.shields.io/github/release/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
-![David](https://img.shields.io/david/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
+<a href="https://www.tinkoff.ru/cardtocard/">
+<img src="https://camo.githubusercontent.com/7a6205263a4d822fb5cbf5b8537cad5fb84b1e6b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f6e617465253230746f2532306d652d353533362532303931333725323035323838253230313933342d696e666f726d6174696f6e616c2e7376673f75726c3d68747470733a2f2f7777772e74696e6b6f66662e72752f63617264746f636172642f">
+</a>
+![GitHub release](https://img.shields.io/github/release/andreyalexeich/gulp-pug-starter.svg)
+![David](https://img.shields.io/david/andreyalexeich/gulp-pug-starter.svg)
 ![GitHub stars](https://img.shields.io/github/stars/andreyalexeich/gulp-pug-starter.svg?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/andreyalexeich/gulp-pug-starter.svg?style=social)
 
