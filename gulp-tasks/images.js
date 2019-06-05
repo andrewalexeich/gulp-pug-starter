@@ -12,7 +12,6 @@ import webp from "gulp-webp";
 import debug from "gulp-debug";
 import browsersync from "browser-sync";
 import yargs from "yargs";
-import rename from "gulp-rename";
 
 const argv = yargs.argv,
     production = !!argv.production;
