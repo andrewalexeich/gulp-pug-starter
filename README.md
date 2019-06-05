@@ -40,7 +40,6 @@ gulp-pug-starter
 │   ├── fonts
 │   ├── img
 │   ├── js
-│   ├── pages
 │   ├── styles
 │   ├── views
 │   └── .htaccess
@@ -70,7 +69,7 @@ gulp-pug-starter
     * шрифты: ```src/fonts```
     * изображения: ```src/img```
     * JS-файлы: ```src/js```
-    * страницы сайта: ```src/pages```
+    * страницы сайта: ```src/views/pages```
     * SCSS-файлы: ```src/styles```
     * служебные Pug-файлы: ```src/views```
     * конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
