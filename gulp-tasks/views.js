@@ -11,7 +11,7 @@ const argv = yargs.argv,
     production = !!argv.production;
 
 gulp.task("views", () => {
-    return gulp.src(["./src/views/index.pug", "./src/pages/*.pug"])
+    return gulp.src(["./src/views/index.pug", "./src/views/pages/*.pug"])
         .pipe(pug({
             pretty: true
         }))
