@@ -10,13 +10,12 @@ import imageminGiflossy from "imagemin-giflossy";
 import debug from "gulp-debug";
 import browsersync from "browser-sync";
 import yargs from "yargs";
-import rename from "gulp-rename";
 
 const argv = yargs.argv,
     production = !!argv.production;
 
 gulp.task("images", () => {
-    return gulp.src(["./src/img/**/*.{jpg,jpeg,png,gif,svg}", "!./src/img/svg/*.svg", "!./src/img/favicon.{jpg,jpeg,png,gif}"])
+    return gulp.src(["./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}", "!./src/img/svg/*.svg", "!./src/img/favicon.{jpg,jpeg,png,gif}"])
         .pipe(gulpif(production, imagemin([
             imageminGiflossy({
                 optimizationLevel: 3,
@@ -32,7 +31,7 @@ gulp.task("images", () => {
             }),
             imageminMozjpeg({
                 progressive: true,
-                quality: 70
+                quality: 90
             }),
             imagemin.svgo({
                 plugins: [
@@ -47,9 +46,6 @@ gulp.task("images", () => {
                 ]
             })
         ])))
-        .pipe(rename(function(path) {
-            path.basename = path.basename.replace("_webp", "");
-        }))
         .pipe(gulp.dest("./dist/img/"))
         .pipe(debug({
             "title": "Images"

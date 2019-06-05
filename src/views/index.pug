@@ -1,17 +1,10 @@
 extends layouts/default
-include utils/mixins
+include helpers/mixins
 
 block variables
 	- const title = "gulp-pug-starter"
 
 block content
-	.container
-		.main
-			picture._img
-				source(srcset="../img/pic.webp" type="image/webp").img-responsive
-				img(src="../img/pic.png" alt="").img-responsive
-			._text
-				p
-					| Чтобы начать работу, удалите эту заглушку в файле <code>src/views/index.pug</code>, а также<br>стили к ней в <code>src/views/layouts/default.pug</code>
+
 block scripts
 	script(src="../js/main.js")
