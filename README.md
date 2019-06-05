@@ -1,5 +1,6 @@
 # gulp-pug-starter
-![Uses](https://img.shields.io/badge/%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-Pug%2C%20SCSS%2C%20ES6-informational.svg)
+![Uses](https://img.shields.io/badge/uses-Pug%2C%20SCSS%2C%20ES6-informational.svg)
+![Donate](https://img.shields.io/badge/donate%20to%20me-5536%209137%205288%201934-informational.svg?link=https://www.tinkoff.ru/cardtocard/&link=https://www.tinkoff.ru/cardtocard/)
 ![GitHub release](https://img.shields.io/github/release/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![David](https://img.shields.io/david/andreyalexeich/gulp-pug-starter.svg?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/andreyalexeich/gulp-pug-starter.svg?style=social)
@@ -75,13 +76,14 @@ gulp-pug-starter
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Команды
-* ```yarn run lint:style```: проверить SCSS-файлы
+* ```yarn run lint:style```: проверить SCSS-файлы (для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint```. Ошибки будут исправлены автоматически при сохранении файла)
 * ```yarn run dev```: запуск сервера для разработки проекта
 * ```yarn run build```: собрать проект с оптимизацией без запуска сервера
 * ```yarn run build views```: скомпилировать Pug-файлы
 * ```yarn run build styles```: скомпилировать SCSS-файлы
 * ```yarn run build scripts```: собрать JS-файлы
 * ```yarn run build images```: собрать изображения
+* ```yarn run build webp```: сконвертировать изображения в формат ```.webp```
 * ```yarn run build sprites```: собрать спрайты
 * ```yarn run build fonts```: собрать шрифты
 * ```yarn run build favicons```: собрать фавиконки
@@ -94,25 +96,44 @@ gulp-pug-starter
     * Pug-файл блока импортируется в файл ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться блок)
     * SCSS-файл блока импортируется в файл ```src/blocks/modules/_modules.scss```
     * JS-файл блока импортируется в ```src/js/import/modules.js```
+
+Пример структуры папки с БЭМ-блоком:
+```
+blocks
+├── modules
+│   ├── header
+│   │   ├── header.pug
+│   │   ├── header.js
+│   │   ├── header.scss
+```
+Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды: 
+* ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
+* ```bem create my-component -l src/blocks/components``` для создания компонента
+* ```bem create my-component -l src/blocks/components && bem create my-block``` - создать всё вместе
+
 ### Компоненты
 * компоненты (например, иконки, кнопки) оформляются в Pug с помощью примесей
 * каждый компонент имеет свою папку внутри ```src/blocks/components```
-* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл
+* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у компонента используется скрипт)
     * Pug-файл компонента импортируется в файл главной страницы ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться компонент)
     * SCSS-файл компонента импортируется в файл ```src/blocks/components/_components.scss```
     * JS-файл компонента импортируется в файл ```src/js/import/components.js```
+
 ### Страницы проекта
 * страницы проекта находятся в папке ```src/pages```
     * каждая страница (в том числе главная) наследует шаблон ```src/views/layouts/default.pug```
     * главная страница: ```src/views/index.pug```
+
 ### Шрифты
 * шрифты находятся в папке ```src/fonts```
     * используйте [форматы](https://caniuse.com/#search=woff) ```woff``` и ```woff2```
     * шрифты подключаются в файл ```src/styles/base/_fonts.scss```
+
 ### Изображения 
 * изображения находятся в папке ```src/img```
     * изображение для генерации фавиконок должно находиться в папке ```src/img``` и иметь размер не менее ```180px x 180px```
     * изображения автоматически конвертируются в формат ```.webp```. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
+
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
 	* для их загрузки воспользуйтеcь командой ```yarn add package_name```
@@ -121,58 +142,6 @@ gulp-pug-starter
 	import $ from "jquery";
 	```
 	* для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/main.scss```
-
-## БЭМ
-В сборке используется компонентный подход к разработке сайтов по методолгии БЭМ, когда каждый БЭМ-блок имеет свою папку, внутри которой находятся один Pug-файл, один SCSS-файл и
-один JS-файл (если у блока используется скрипт). Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды: 
-* ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
-* ```bem create my-component -l src/blocks/components``` для создания компонента
-* ```bem create my-component -l src/blocks/components && bem create my-block``` - создать всё вместе
-
-Для более удобного написания разметки по БЭМ используется плагин шорткатов для препроцессора Pug. Пример использования:
-
-**Pug**
-```jade
-header.header
-    nav.menu
-        a(href="#")._logo Company
-        .list
-            a._item.-active(href="#") Home
-            a._item(href="#") News
-            a._item(href="#") Gallery
-            a._item(href="#") Partners
-            a._item(href="#") About
-            a._item(href="#") Contacts
-    h1._title Hello, World!
-    .myslider._myslider
-        ._slide Content
-        ._slide.-active Content
-        ._slide Content
-    p._text Good weather
-```
-**Результат**
-```html
-<header class="header">
-    <nav class="menu">
-        <a class="menu__logo" href="#">Company</a>
-        <div class="list">
-            <a class="list__item list__item--active" href="#">Home</a>
-            <a class="list__item" href="#">News</a>
-            <a class="list__item" href="#">Gallery</a>
-            <a class="list__item" href="#">Partners</a>
-            <a class="list__item" href="#">About</a>
-            <a class="list__item" href="#">Contacts</a>
-        </div>
-    </nav>
-    <h1 class="header__title">Hello, World!</h1>
-    <div class="myslider header__myslider">
-        <div class="myslider__slide">Content</div>
-        <div class="myslider__slide myslider__slide--active">Content</div>
-        <div class="myslider__slide">Content</div>
-    </div>
-    <p class="header__text">Good weather</p>
-</header>
-```
 
 ## CSS-сетка smart-grid
 В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от 

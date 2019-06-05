@@ -7,8 +7,6 @@ import imageminPngquant from "imagemin-pngquant";
 import imageminZopfli from "imagemin-zopfli";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminGiflossy from "imagemin-giflossy";
-import imageminWebp from "imagemin-webp";
-import webp from "gulp-webp";
 import debug from "gulp-debug";
 import browsersync from "browser-sync";
 import yargs from "yargs";
@@ -17,7 +15,7 @@ const argv = yargs.argv,
     production = !!argv.production;
 
 gulp.task("images", () => {
-    return gulp.src(["./src/img/**/*.{jpg,jpeg,png,gif,svg}", "!./src/img/svg/*.svg", "!./src/img/favicon.{jpg,jpeg,png,gif}"])
+    return gulp.src(["./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}", "!./src/img/svg/*.svg", "!./src/img/favicon.{jpg,jpeg,png,gif}"])
         .pipe(gulpif(production, imagemin([
             imageminGiflossy({
                 optimizationLevel: 3,
@@ -33,7 +31,7 @@ gulp.task("images", () => {
             }),
             imageminMozjpeg({
                 progressive: true,
-                quality: 70
+                quality: 90
             }),
             imagemin.svgo({
                 plugins: [
@@ -48,11 +46,6 @@ gulp.task("images", () => {
                 ]
             })
         ])))
-        .pipe(webp(gulpif(production, imageminWebp({
-            lossless: true,
-            quality: 100,
-            alphaQuality: 100
-        }))))
         .pipe(gulp.dest("./dist/img/"))
         .pipe(debug({
             "title": "Images"
