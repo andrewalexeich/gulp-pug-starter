@@ -3,7 +3,9 @@
 ._*
 .Spotlight-V100
 .Trashes
+.idea
 .vscode
+.github
 ehthumbs.db
 Thumbs.db
 node_modules
