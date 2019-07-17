@@ -1,2 +1,2 @@
-import "./import/modules.js";
-import "./import/components.js";
+import "./import/modules";
+import "./import/components";
