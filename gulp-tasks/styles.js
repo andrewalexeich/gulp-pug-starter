@@ -5,6 +5,7 @@ import gulp from "gulp";
 import gulpif from "gulp-if";
 import rename from "gulp-rename";
 import sass from "gulp-sass";
+import sassGlob from "gulp-sass-glob";
 import mincss from "gulp-clean-css";
 import groupmedia from "gulp-group-css-media-queries";
 import autoprefixer from "gulp-autoprefixer";
@@ -21,6 +22,7 @@ gulp.task("styles", () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(plumber())
+        .pipe(sassGlob())
         .pipe(sass())
         .pipe(groupmedia())
         .pipe(gulpif(production, autoprefixer({
