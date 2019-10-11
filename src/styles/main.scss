@@ -1,8 +1,5 @@
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/functions";
-@import "vendor/libs";
-@import "base/fonts";
-@import "base/general";
-@import "../blocks/components/components";
-@import "../blocks/modules/modules";
+@import "helpers/*.scss";
+@import "vendor/import/*.scss";
+@import "base/*.scss";
+// @import "../blocks/components/**/*.scss";
+@import "../blocks/modules/**/*.scss";
