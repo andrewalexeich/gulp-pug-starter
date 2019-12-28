@@ -6,7 +6,7 @@ const requireDir = require("require-dir"),
     paths = {
         views: {
             src: [
-                "./src/views/index.pug",
+                "./src/views/**/*.pug",
                 "./src/views/pages/*.pug"
             ],
             dist: "./dist/",
