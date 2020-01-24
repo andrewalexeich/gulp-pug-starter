@@ -84,20 +84,20 @@ gulp-pug-starter
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Команды
-* ```yarn run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm 
+* ```yarn run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
 * ```yarn run lint:style --fix``` - исправить ошибки в SCSS-файлах
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
-* ```yarn run build views``` - скомпилировать Pug-файлы
-* ```yarn run build styles``` - скомпилировать SCSS-файлы
-* ```yarn run build scripts``` - собрать JS-файлы
-* ```yarn run build images``` - собрать изображения
-* ```yarn run build webp``` - сконвертировать изображения в формат ```.webp```
-* ```yarn run build sprites```- собрать спрайты
-* ```yarn run build fonts``` - собрать шрифты
-* ```yarn run build favicons``` - собрать фавиконки
-* ```yarn run build gzip``` - собрать конфигурацию Apache
+* ```yarn run build:views``` - скомпилировать Pug-файлы
+* ```yarn run build:styles``` - скомпилировать SCSS-файлы
+* ```yarn run build:scripts``` - собрать JS-файлы
+* ```yarn run build:images``` - собрать изображения
+* ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
+* ```yarn run build:sprites```- собрать спрайты
+* ```yarn run build:fonts``` - собрать шрифты
+* ```yarn run build:favicons``` - собрать фавиконки
+* ```yarn run build:gzip``` - собрать конфигурацию Apache
 
 ## Рекомендации по использованию
 ### Компонентный подход к разработке сайтов
@@ -116,7 +116,7 @@ blocks
 │   │   ├── header.js
 │   │   ├── header.scss
 ```
-Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды: 
+Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды:
 * ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
 * ```bem create my-component -l src/blocks/components``` для создания компонента
 * ```bem create my-component -l src/blocks/components && bem create my-block``` - создать всё вместе
@@ -140,7 +140,7 @@ blocks
     * шрифты подключаются в файл ```src/styles/base/_fonts.scss```
     * сконвертировать локальные шрифты можно с помощью [данного сервиса](https://onlinefontconverter.com/)
 
-### Изображения 
+### Изображения
 * изображения находятся в папке ```src/img```
     * изображение для генерации фавиконок должно находиться в папке ```src/img/favicon``` и иметь размер не менее ```1024px x 1024px```
     * изображения автоматически конвертируются в формат ```.webp```. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
@@ -148,29 +148,29 @@ blocks
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
     * для их загрузки воспользуйтеcь командой ```yarn add package_name```
-    * для подключения JS-файлов библиотек импортируйте их в самом начале JS-файла БЭМ-блока (то есть тот БЭМ-блок, который использует скрипт), например: 
-    ```javascript 
+    * для подключения JS-файлов библиотек импортируйте их в самом начале JS-файла БЭМ-блока (то есть тот БЭМ-блок, который использует скрипт), например:
+    ```javascript
     import $ from "jquery";
     ```
     * для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/vendor/_libs.scss```
     * JS-файлы и стилевые файлы библиотек самостоятельно изменять нельзя
 
-:warning: Если в вашем проекте используется несколько библиотек, которые необходимо подключать на нескольких страницах, во избежании ошибок нужно: 
+:warning: Если в вашем проекте используется несколько библиотек, которые необходимо подключать на нескольких страницах, во избежании ошибок нужно:
 * по пути ```src/js/import``` создать папку ```pages```
 * в папке ```pages``` создать js-файл для страницы, например, ```pageA.js```, и импортировать туда библиотеку, которая будет использоваться только на этой странице
     * аналогично проделать шаг для дополнительных страниц
 * в файле ```webpack.config.js``` в точку входа добавить js-файлы страниц, пример:
-```javascript 
+```javascript
 entry: {
     main: "./src/js/index.js",
     pageA: "./src/js/import/pages/pageA.js",
     pageB: "./src/js/import/pages/pageB.js"
 }
 ```
-* подключить скомпилированные js-файлы на необходимых страницах 
+* подключить скомпилированные js-файлы на необходимых страницах
 
 ## CSS-сетка smart-grid
-В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от 
+В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от
 лишних классов в разметке за счёт использования примесей в SCSS и ускоряет адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap.com/). Пример использования:
 
 **SCSS**
@@ -178,7 +178,7 @@ entry: {
 .items{
     @include row-flex();
     @include md(justify-content, center);
- 
+
     .item{
         @include col();
         @include size(3);
