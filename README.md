@@ -89,6 +89,7 @@ gulp-pug-starter
 * ```yarn run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
 * ```yarn run lint:style --fix``` - исправить ошибки в SCSS-файлах
+* ```yarn run page --pn PageName -hm``` - создание новой страницы и модуля страницы + подключение всех импортов у модуля в нужные файлы. Вызов команды без ``-hm`` создаст одну страничку.
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
 * ```yarn run build:views``` - скомпилировать Pug-файлы
