@@ -90,7 +90,7 @@ gulp-pug-starter
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
 * ```yarn run lint:styles --fix``` - исправить ошибки в SCSS-файлах
 * ```yarn run lint:scripts``` - проверить JS-файлы
-* ```yarn run lint:scripts --fix``` - исправить ошибки в SCSS-файлах
+* ```yarn run lint:scripts --fix``` - исправить ошибки в JS-файлах
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
 * ```yarn run build:views``` - скомпилировать Pug-файлы
