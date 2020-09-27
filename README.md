@@ -99,6 +99,8 @@ gulp-pug-starter
 * ```yarn run build:fonts``` - собрать шрифты
 * ```yarn run build:favicons``` - собрать фавиконки
 * ```yarn run build:gzip``` - собрать конфигурацию Apache
+* ```yarn run bem-m``` - добавить БЭМ-блок
+* ```yarn run bem-c``` - добавить компонент
 
 ## :bulb: Рекомендации по использованию
 ### Компонентный подход к разработке сайтов
