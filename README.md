@@ -117,10 +117,10 @@ blocks
 │   │   ├── header.js
 │   │   ├── header.scss
 ```
+
 Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды:
-* ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
-* ```bem create my-component -l src/blocks/components``` для создания компонента
-* ```bem create my-component -l src/blocks/components && bem create my-block``` - создать всё вместе
+* ```yarn run bem-m my-block``` - для создания БЭМ блока в ```src/block/modules``` (для основных БЭМ-блоков), где ```my-block``` - имя БЭМ-блока; 
+* ```yarn run bem-с my-component``` - для создания компонента в ```src/blocks/components``` (для компонентов), где ```my-component``` - имя компонента
 
 ### Компоненты
 * компоненты (например, иконки, кнопки) оформляются в Pug с помощью примесей
