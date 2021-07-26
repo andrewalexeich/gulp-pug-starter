@@ -1,0 +1,13 @@
+header.header
+  .header__container.container
+    .menu
+
+      a.menu__logo(href='#') logo
+
+      ul.menu__list
+        each val in ['Home', 'About', 'Contact']
+          li.menu__item 
+            a.menu__link(href='#')= val
+
+      .menu__burger
+        span
