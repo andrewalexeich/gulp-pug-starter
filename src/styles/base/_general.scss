@@ -1,12 +1,58 @@
-h1, h2, h3, h4, h5, h6, ul {
-    margin: 0;
-    padding: 0;
-}
-
 .container {
     @include container();
     @include sm(max-width, rem(510));
     @include md(max-width, rem(690));
     @include lg(max-width, rem(930));
-    @include xl(max-width, rem(1110));
+    @include xl(max-width, rem(1270));
+}
+
+::placeholder {
+	color: #444444;
+}
+
+::selection {
+	background-color: $accent;
+	color: #ffffff;
+}
+
+input,
+textarea {
+	outline: none;
+
+	&:focus:required:invalid {
+		border-color: red;
+	}
+
+	&:required:valid {
+		border-color: green;
+	}
+}
+
+body {
+	font-family: $userfont;
+	font-size: $fontsize;
+	line-height: $lineheight;
+	color: $textcolor;
+	position: relative;
+	overflow-x: hidden;
+
+	&._modal-is-open {
+		overflow: hidden;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
 }
