@@ -5,7 +5,9 @@ block variables
 	- const title = "gulp-pug-starter"
 
 block content
+	include ../blocks/modules/header/header
+	include ../blocks/modules/footer/footer
 
 block scripts
-	script(src="js/main.js")
 	script(src="js/vendor.js")
+	script(src="js/main.js")
