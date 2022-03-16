@@ -252,7 +252,7 @@
             "message": "В проекте двойные кавычки"
         }],
 
-        "selector-attribute-operator-blacklist": [["id"], {
+        "selector-attribute-operator-disallowed-list": [["id"], {
             "message": "Для стилизации ID использовать нельзя"
         }],
         "selector-pseudo-class-case": ["lower", {
